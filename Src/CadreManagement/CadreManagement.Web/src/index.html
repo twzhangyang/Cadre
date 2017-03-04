@@ -13,22 +13,20 @@
   <!-- Configured Head Tags  -->
   <%= webpackConfig.htmlElements.headTags %>
   <% } %>
-
-  <!-- base url -->
+    <!-- base url -->
   <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
 
 
 </head>
 
 <body>
-  <button class="btn btn-danger">Alert</button>
 <h1>hello good afternoon</h1>
-  <app>
+<app>
     Loading...
-  </app>
+</app>
 
-  <!-- Google Analytics: change UA-71073175-1 to be your site's ID -->
-  <!--<script>
+<!-- Google Analytics: change UA-71073175-1 to be your site's ID -->
+<!--<script>
     (function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=r;A[l]=A[l]||function(){
     (A[l].q=A[l].q||[]).push(arguments)},A[l].l=1*new Date();a=n.createElement(g),
     r=n.getElementsByTagName(g)[0];a.async=1;a.src=u;r.parentNode.insertBefore(a,r)
@@ -38,10 +36,10 @@
     ga('send', 'pageview');
   </script>-->
 
-  <% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
-  <!-- Webpack Dev Server reload -->
-  <script src="/webpack-dev-server.js"></script>
-  <% } %>
+<% if (htmlWebpackPlugin.options.metadata.isDevServer && htmlWebpackPlugin.options.metadata.HMR !== true) { %>
+<!-- Webpack Dev Server reload -->
+<script src="/webpack-dev-server.js"></script>
+<% } %>
 
 
 </body>
