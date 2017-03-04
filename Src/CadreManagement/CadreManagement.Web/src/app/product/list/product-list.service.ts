@@ -6,10 +6,10 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 
-import { IProduct } from './product';
+import { IProduct } from './../product';
 
 @Injectable()
-export class ProductService {
+export class ProductListService {
     private _productUrl = 'assets/mock-data/products/products.json';
 
     constructor(private _http: Http) {

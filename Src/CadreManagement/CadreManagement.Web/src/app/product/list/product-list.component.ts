@@ -1,6 +1,6 @@
 ﻿import { Component, OnInit } from '@angular/core';
-import { IProduct } from './product';
-import { ProductService } from './product.service';
+import { IProduct } from './../product';
+import { ProductListService } from './product-list.service';
 
 @Component({
     templateUrl: './product-list.component.html',
@@ -16,7 +16,7 @@ export class ProductListComponent implements OnInit {
 
     public products: IProduct[];
 
-    constructor(private _productService: ProductService) {
+    constructor(private _productListService: ProductListService) {
 
     }
 
@@ -25,9 +25,9 @@ export class ProductListComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this._productService.getProducts()
+        this._productListService.getProducts()
             .subscribe(products => this.products = products,
-            error => this.errorMessage = <any>error);
+                error => this.errorMessage = <any>error);
     }
 
     public onRatingClicked(message: string): void {

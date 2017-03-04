@@ -24,7 +24,7 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { ProductListComponent, ProductService } from './product';
+import { ProductModule } from './product';
 
 // test
 import { HelloComponent } from './hello';
@@ -55,7 +55,6 @@ type StoreType = {
     bootstrap: [AppComponent],
     declarations: [
         AppComponent,
-        ProductListComponent,
         AboutComponent,
         HomeComponent,
         NoContentComponent,
@@ -66,12 +65,12 @@ type StoreType = {
         BrowserModule,
         FormsModule,
         HttpModule,
-        RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+        RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+        ProductModule
     ],
     providers: [// expose our Services and Providers into Angular's dependency injection
         ENV_PROVIDERS,
         APP_PROVIDERS,
-        ProductService
     ]
 })
 export class AppModule {

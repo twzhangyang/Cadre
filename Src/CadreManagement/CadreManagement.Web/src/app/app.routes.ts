@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { ProductListComponent } from './product';
 import { NoContentComponent } from './no-content';
 
 // test
@@ -11,7 +10,6 @@ import { DataResolver } from './app.resolver';
 export const ROUTES: Routes = [
     { path: '', component: HomeComponent },
     { path: 'home', component: HomeComponent },
-    { path: 'product', component: ProductListComponent },
     { path: 'about', component: AboutComponent },
     { path: 'hello', component: HelloComponent },
     { path: 'detail', loadChildren: './+detail#DetailModule' },
