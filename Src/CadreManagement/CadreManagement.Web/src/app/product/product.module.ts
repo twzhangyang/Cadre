@@ -2,6 +2,7 @@
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import {SharedModule} from './../shared'
 
 import { ProductListComponent } from './list/product-list.component';
 import { ProductDetailComponent } from './detail/product-detail.component';
@@ -21,7 +22,8 @@ import {ProductFilterPipe} from './list/product-filter.pipe';
         RouterModule.forChild([
             { path: 'products', component: ProductListComponent },
             { path: 'product/:id', component: ProductDetailComponent, canActivate: [ProductDetailGuardService] }
-        ])
+        ]),
+        SharedModule
     ],
     providers: [
         ProductListService,

@@ -166,6 +166,8 @@
     <Content Include="src\app\product\detail\product-detail.component.html" />
     <Content Include="src\app\product\list\product-list.component.css" />
     <Content Include="src\app\product\list\product-list.component.html" />
+    <Content Include="src\app\shared\star\star.component.css" />
+    <Content Include="src\app\shared\star\star.component.html" />
     <Content Include="src\assets\humans.txt" />
     <Content Include="src\assets\icon\android-icon-144x144.png" />
     <Content Include="src\assets\icon\android-icon-192x192.png" />
@@ -254,6 +256,9 @@
     <TypeScriptCompile Include="src\app\product\product.module.ts" />
     <TypeScriptCompile Include="src\app\product\product.ts" />
     <TypeScriptCompile Include="src\app\product\list\product-list.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\index.ts" />
+    <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
+    <TypeScriptCompile Include="src\app\shared\star\star.component.ts" />
     <TypeScriptCompile Include="src\custom-typings.d.ts" />
     <TypeScriptCompile Include="src\main.browser.aot.ts" />
     <TypeScriptCompile Include="src\main.browser.ts" />
@@ -380,6 +385,7 @@
   <ItemGroup>
     <Content Include="src\assets\mock-data\products\products.json" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
