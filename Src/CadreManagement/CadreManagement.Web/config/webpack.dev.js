@@ -176,6 +176,8 @@ module.exports = function (options) {
             '@angular/router',
             '@angularclass/hmr',
             'rxjs',
+            'jquery',
+            'bootstrap'
           ]
         },
         dllDir: helpers.root('dll'),
