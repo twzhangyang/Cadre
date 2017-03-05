@@ -7,10 +7,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadreManagement.WebApi", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadreManagement.Web", "CadreManagement.Web\CadreManagement.Web.csproj", "{681DFA7F-1E89-4B0B-96CE-141DDF786FBB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8E1E92DE-5F6F-49D5-9C9F-F89B718E93F9}"
-	ProjectSection(SolutionItems) = preProject
-		WE-Palette.css = WE-Palette.css
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CadreManagement.Core", "CadreManagement.Core", "{5801E645-0529-4E51-83AA-83CB8C0F7BEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadreManagement.Core", "CadreManagement.Core\CadreManagement.Core.csproj", "{58E67CF2-E040-498E-894A-00899409FC16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CadreManagement.Domain", "CadreManagement.Domain", "{D38D3FDF-866D-4474-8338-BFDC2A5432DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadreManagement.Domain", "CadreManagement.Domain\CadreManagement.Domain.csproj", "{D6A04D70-875C-4F9F-B3AC-345E66EB7A8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadreManagement.Repository", "CadreManagement.Repository\CadreManagement.Repository.csproj", "{A7AA0758-8120-41E4-B44C-456EA1B77097}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadreManagement.DomainModel", "CadreManagement.DomainModel\CadreManagement.DomainModel.csproj", "{ACAC1FE9-6818-431B-A9BF-8FC6A53DFD03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadreManagement.ApplicationService", "CadreManagement.ApplicationService\CadreManagement.ApplicationService.csproj", "{D739DF78-1DD3-48C4-BF0A-6FEB91A37EF6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,8 +35,35 @@ Global
 		{681DFA7F-1E89-4B0B-96CE-141DDF786FBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{681DFA7F-1E89-4B0B-96CE-141DDF786FBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{681DFA7F-1E89-4B0B-96CE-141DDF786FBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58E67CF2-E040-498E-894A-00899409FC16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58E67CF2-E040-498E-894A-00899409FC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58E67CF2-E040-498E-894A-00899409FC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58E67CF2-E040-498E-894A-00899409FC16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6A04D70-875C-4F9F-B3AC-345E66EB7A8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6A04D70-875C-4F9F-B3AC-345E66EB7A8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6A04D70-875C-4F9F-B3AC-345E66EB7A8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6A04D70-875C-4F9F-B3AC-345E66EB7A8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7AA0758-8120-41E4-B44C-456EA1B77097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7AA0758-8120-41E4-B44C-456EA1B77097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7AA0758-8120-41E4-B44C-456EA1B77097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7AA0758-8120-41E4-B44C-456EA1B77097}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACAC1FE9-6818-431B-A9BF-8FC6A53DFD03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACAC1FE9-6818-431B-A9BF-8FC6A53DFD03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACAC1FE9-6818-431B-A9BF-8FC6A53DFD03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACAC1FE9-6818-431B-A9BF-8FC6A53DFD03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D739DF78-1DD3-48C4-BF0A-6FEB91A37EF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D739DF78-1DD3-48C4-BF0A-6FEB91A37EF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D739DF78-1DD3-48C4-BF0A-6FEB91A37EF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D739DF78-1DD3-48C4-BF0A-6FEB91A37EF6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{58E67CF2-E040-498E-894A-00899409FC16} = {5801E645-0529-4E51-83AA-83CB8C0F7BEB}
+		{D6A04D70-875C-4F9F-B3AC-345E66EB7A8B} = {D38D3FDF-866D-4474-8338-BFDC2A5432DD}
+		{A7AA0758-8120-41E4-B44C-456EA1B77097} = {D38D3FDF-866D-4474-8338-BFDC2A5432DD}
+		{ACAC1FE9-6818-431B-A9BF-8FC6A53DFD03} = {D38D3FDF-866D-4474-8338-BFDC2A5432DD}
+		{D739DF78-1DD3-48C4-BF0A-6FEB91A37EF6} = {D38D3FDF-866D-4474-8338-BFDC2A5432DD}
 	EndGlobalSection
 EndGlobal
