@@ -160,14 +160,26 @@
     <Content Include="protractor.conf.js" />
     <Content Include="src\app\app.component.css" />
     <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\dashboard\dashboard.component.html" />
+    <Content Include="src\app\dashboard\home\home.component.html" />
+    <Content Include="src\app\dashboard\icons\icons.component.html" />
+    <Content Include="src\app\dashboard\maps\maps.component.html" />
+    <Content Include="src\app\dashboard\notifications\notifications.component.html" />
+    <Content Include="src\app\dashboard\table\table.component.html" />
+    <Content Include="src\app\dashboard\typography\typography.component.html" />
+    <Content Include="src\app\dashboard\upgrade\upgrade.component.html" />
+    <Content Include="src\app\dashboard\user\user.component.html" />
     <Content Include="src\app\hello\hello.component.html" />
     <Content Include="src\app\home\home.component.css" />
     <Content Include="src\app\home\home.component.html" />
     <Content Include="src\app\product\detail\product-detail.component.html" />
     <Content Include="src\app\product\list\product-list.component.css" />
     <Content Include="src\app\product\list\product-list.component.html" />
+    <Content Include="src\app\shared\footer\footer.component.html" />
+    <Content Include="src\app\shared\navbar\navbar.component.html" />
     <Content Include="src\app\shared\star\star.component.css" />
     <Content Include="src\app\shared\star\star.component.html" />
+    <Content Include="src\app\sidebar\sidebar.component.html" />
     <Content Include="src\assets\humans.txt" />
     <Content Include="src\assets\icon\android-icon-144x144.png" />
     <Content Include="src\assets\icon\android-icon-192x192.png" />
@@ -203,6 +215,7 @@
     <Content Include="src\index.html" />
     <Content Include="src\meta\humans.txt" />
     <Content Include="src\meta\robots.txt" />
+    <Content Include="src\styles\light-bootstrap-dashboard.css" />
     <Content Include="src\styles\styles.css" />
     <Content Include="webpack.config.js" />
   </ItemGroup>
@@ -228,11 +241,21 @@
     <TypeScriptCompile Include="src\app\about\index.ts" />
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
-    <TypeScriptCompile Include="src\app\app.e2e.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\app.resolver.ts" />
     <TypeScriptCompile Include="src\app\app.routes.ts" />
     <TypeScriptCompile Include="src\app\app.service.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\dashboard.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\dashboard.module.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\dashboard.routes.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\home\home.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\icons\icons.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\maps\maps.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\notifications\notifications.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\table\table.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\typography\typography.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\upgrade\upgrade.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\user\user.component.ts" />
     <TypeScriptCompile Include="src\app\environment.ts" />
     <TypeScriptCompile Include="src\app\hello\hello.component.ts" />
     <TypeScriptCompile Include="src\app\hello\index.ts" />
@@ -256,9 +279,17 @@
     <TypeScriptCompile Include="src\app\product\product.module.ts" />
     <TypeScriptCompile Include="src\app\product\product.ts" />
     <TypeScriptCompile Include="src\app\product\list\product-list.service.ts" />
+    <TypeScriptCompile Include="src\app\shared\footer\footer.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\footer\footer.module.ts" />
     <TypeScriptCompile Include="src\app\shared\index.ts" />
+    <TypeScriptCompile Include="src\app\shared\navbar\navbar.component.ts" />
+    <TypeScriptCompile Include="src\app\shared\navbar\navbar.module.ts" />
     <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
     <TypeScriptCompile Include="src\app\shared\star\star.component.ts" />
+    <TypeScriptCompile Include="src\app\sidebar\sidebar-routes.config.ts" />
+    <TypeScriptCompile Include="src\app\sidebar\sidebar.component.ts" />
+    <TypeScriptCompile Include="src\app\sidebar\sidebar.metadata.ts" />
+    <TypeScriptCompile Include="src\app\sidebar\sidebar.module.ts" />
     <TypeScriptCompile Include="src\custom-typings.d.ts" />
     <TypeScriptCompile Include="src\main.browser.aot.ts" />
     <TypeScriptCompile Include="src\main.browser.ts" />
@@ -385,7 +416,6 @@
   <ItemGroup>
     <Content Include="src\assets\mock-data\products\products.json" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

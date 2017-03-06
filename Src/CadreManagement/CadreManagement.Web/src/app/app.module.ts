@@ -25,6 +25,11 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { ProductModule } from './product';
+import { SidebarModule } from './sidebar/sidebar.module';
+import { FooterModule } from './shared/footer/footer.module';
+import { NavbarModule } from './shared/navbar/navbar.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import {DashboardComponent} from './dashboard/dashboard.component';
 
 // test
 import { HelloComponent } from './hello';
@@ -35,6 +40,7 @@ import { XLargeDirective } from './home/x-large';
 
 import '../styles/styles.scss';
 import '../styles/styles.css';
+import '../styles/light-bootstrap-dashboard.css';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -55,6 +61,7 @@ type StoreType = {
     bootstrap: [AppComponent],
     declarations: [
         AppComponent,
+        DashboardComponent,
         AboutComponent,
         HomeComponent,
         NoContentComponent,
@@ -66,7 +73,11 @@ type StoreType = {
         FormsModule,
         HttpModule,
         RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
-        ProductModule
+        ProductModule,
+        SidebarModule,
+        FooterModule,
+        NavbarModule,
+        DashboardModule
     ],
     providers: [// expose our Services and Providers into Angular's dependency injection
         ENV_PROVIDERS,

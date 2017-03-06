@@ -31,4 +31,13 @@ export class AppComponent implements OnInit {
         console.log('Initial App State', this.appState.state);
     }
 
+    public isMaps(path) {
+        if (path == window.location.pathname) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 }
