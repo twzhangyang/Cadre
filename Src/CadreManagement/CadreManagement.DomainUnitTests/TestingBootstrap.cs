@@ -22,7 +22,6 @@ namespace CadreManagement.DomainUnitTests
                 UnitOfWorkRegistrar.Initialize(_container);
 
                 _container.ChangeComponentsLifestyleToScoped();
-                _container.Register(Component.For<IWindsorContainer>().Instance(_container));
 
                 _container.Install(FromAssembly.This());
                 _container.Install(FromAssembly.Containing<UowInstaller>());

@@ -67,6 +67,7 @@
     <Compile Include="ContainerInstallers\EntityChangedEventRaiserInstaller.cs" />
     <Compile Include="ContainerInstallers\ServiceBusInstaller.cs" />
     <Compile Include="ContainerInstallers\UowInstaller.cs" />
+    <Compile Include="ContainerInstallers\WindsorContainerInstaller.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="Events\EntityEvent.cs" />
     <Compile Include="Extensions\EnumerableExtensions.cs" />

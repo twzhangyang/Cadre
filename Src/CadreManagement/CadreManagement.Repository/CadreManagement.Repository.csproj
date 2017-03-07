@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ContainerInstallers\CadreManagementDbContextInstaller.cs" />
     <Compile Include="ContainerInstallers\EntityFrameworkRepositoryInstaller.cs" />
     <Compile Include="ContainerInstallers\RepositoryContextInstaller.cs" />
     <Compile Include="Contracts\IUserRepository.cs" />
