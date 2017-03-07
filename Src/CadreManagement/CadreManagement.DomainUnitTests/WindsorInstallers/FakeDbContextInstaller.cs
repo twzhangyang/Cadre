@@ -18,14 +18,14 @@ namespace CadreManagement.DomainUnitTests.WindsorInstallers
             container.Register(
                 Component.For<DbConnection>().UsingFactoryMethod(DbConnectionFactory.CreateTransient)
                     .Named(DbConnectionKey)
-                    .LifestyleTransient()
+                    .LifestyleScoped()
                     );
 
             container.Register(Component.For<DbContext>()
                 .ImplementedBy<CadreManagementDbContext>()
                 .DependsOn(Dependency.OnComponent(typeof(DbConnection), DbConnectionKey))
                 .Named(FakedCadreManagementDbContextKey)
-                .LifestyleTransient()
+                .LifestyleScoped()
                 .IsDefault());
 
         }

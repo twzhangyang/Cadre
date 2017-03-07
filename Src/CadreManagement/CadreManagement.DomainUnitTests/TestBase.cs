@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Data.Entity;
 using CadreManagement.ApplicationService.Contracts;
+using CadreManagement.Repository.EntityFramework;
 using Castle.MicroKernel.Lifestyle;
 using Castle.Windsor;
 using NUnit.Framework;
@@ -14,21 +16,18 @@ namespace CadreManagement.DomainUnitTests
 
         protected IUserService UserService => Container.Resolve<IUserService>();
 
-        public string Flag = "111";
-
         [SetUp]
         public void CreateScope()
         {
-            Flag = "empty";
-
             Container = TestingBootstrap.CreateContainer();
             _scope = Container.BeginScope();
+            Effort.Provider.EffortProviderConfiguration.RegisterProvider();
+            Database.SetInitializer(new DropCreateDatabaseAlways<CadreManagementDbContext>());
         }
 
         [TearDown]
         public void Dispose()
         {
-            Flag = "";
             _scope.Dispose();
         }
     }

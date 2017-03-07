@@ -6,7 +6,6 @@ namespace CadreManagement.DomainUnitTests
     {
         protected IWindsorContainer Container { get; }
 
-
         protected ScenarioBase(IWindsorContainer container)
         {
             Container = container;
