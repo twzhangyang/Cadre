@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using CadreManagement.ApplicationService.Contracts;
 using CadreManagement.ApplicationService.Exceptions;
@@ -15,6 +16,22 @@ namespace CadreManagement.ApplicationService.Implements
         public UserService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
+        }
+
+        public UserModel GetUser(Guid id)
+        {
+            Contract.Requires(id != Guid.Empty);
+
+            var user = _userRepository.Get(id);
+
+            return new UserModel()
+            {
+                Id = user.Id,
+                Email = user.Email,
+                Name = user.Name,
+                LastLoginDateTime = user.LastLoginDateTime,
+                RegisterDateTime = user.RegisterDateTime
+            };
         }
 
         public Guid Register(UserModel userModel)

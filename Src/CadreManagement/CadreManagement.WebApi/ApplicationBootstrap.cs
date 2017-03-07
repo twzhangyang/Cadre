@@ -1,4 +1,6 @@
-﻿using Castle.Windsor;
+﻿using CadreManagement.ApplicationService.UowHelper;
+using CadreManagement.Core;
+using Castle.Windsor;
 using Castle.Windsor.Installer;
 
 namespace CadreManagement.WebApi
@@ -7,7 +9,9 @@ namespace CadreManagement.WebApi
     {
         public static IWindsorContainer SetupContainer()
         {
-            var container = new WindsorContainer();
+            var container = IocContainerManager.Container;
+            UnitOfWorkRegistrar.Initialize(container);
+
 
             container.Install(FromAssembly.This());
 

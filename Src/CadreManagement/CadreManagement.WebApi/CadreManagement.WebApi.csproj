@@ -163,6 +163,14 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CadreManagement.ApplicationService\CadreManagement.ApplicationService.csproj">
+      <Project>{D739DF78-1DD3-48C4-BF0A-6FEB91A37EF6}</Project>
+      <Name>CadreManagement.ApplicationService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CadreManagement.Core\CadreManagement.Core.csproj">
+      <Project>{58E67CF2-E040-498E-894A-00899409FC16}</Project>
+      <Name>CadreManagement.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CadreManagement.Repository\CadreManagement.Repository.csproj">
       <Project>{A7AA0758-8120-41E4-B44C-456EA1B77097}</Project>
       <Name>CadreManagement.Repository</Name>
