@@ -75,7 +75,7 @@
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="IAggregateRoot.cs" />
     <Compile Include="IEntity.cs" />
-    <Compile Include="IocContainerManager.cs" />
+    <Compile Include="IocContainerCreator.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IRepositoryContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

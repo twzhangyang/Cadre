@@ -18,7 +18,7 @@ namespace CadreManagement.DomainUnitTests
         {
             if (_container == null)
             {
-                _container = IocContainerManager.Container;
+                _container = IocContainerCreator.Container;
                 UnitOfWorkRegistrar.Initialize(_container);
 
                 _container.ChangeComponentsLifestyleToScoped();

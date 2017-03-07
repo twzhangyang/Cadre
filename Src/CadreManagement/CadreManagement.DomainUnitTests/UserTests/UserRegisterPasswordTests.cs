@@ -1,6 +1,6 @@
 ﻿using CadreManagement.Domain.Exceptions;
-using CadreManagement.DomainModel;
 using CadreManagement.DomainUnitTests.UserTests.Scenarios;
+using CadreManagement.Model;
 using FluentAssertions;
 using NUnit.Framework;
 

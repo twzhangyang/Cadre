@@ -1,6 +1,6 @@
 ﻿using System;
 using CadreManagement.ApplicationService.Contracts;
-using CadreManagement.DomainModel;
+using CadreManagement.Model;
 using Castle.Windsor;
 
 namespace CadreManagement.DomainUnitTests.UserTests.Scenarios

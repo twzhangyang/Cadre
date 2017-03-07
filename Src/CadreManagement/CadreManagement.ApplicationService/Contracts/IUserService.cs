@@ -1,5 +1,5 @@
 ﻿using System;
-using CadreManagement.DomainModel;
+using CadreManagement.Model;
 
 namespace CadreManagement.ApplicationService.Contracts
 {

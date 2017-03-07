@@ -1,7 +1,7 @@
 ﻿using System;
 using CadreManagement.ApplicationService.Exceptions;
-using CadreManagement.DomainModel;
 using CadreManagement.DomainUnitTests.UserTests.Scenarios;
+using CadreManagement.Model;
 using FluentAssertions;
 using NUnit.Framework;
 

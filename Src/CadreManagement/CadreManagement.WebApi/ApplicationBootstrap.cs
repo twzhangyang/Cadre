@@ -9,7 +9,7 @@ namespace CadreManagement.WebApi
     {
         public static IWindsorContainer SetupContainer()
         {
-            var container = IocContainerManager.Container;
+            var container = IocContainerCreator.Container;
             UnitOfWorkRegistrar.Initialize(container);
 
 

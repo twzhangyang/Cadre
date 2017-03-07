@@ -141,6 +141,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="ContainerInstallers\ApiControllerInstaller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -170,6 +171,10 @@
     <ProjectReference Include="..\CadreManagement.Core\CadreManagement.Core.csproj">
       <Project>{58E67CF2-E040-498E-894A-00899409FC16}</Project>
       <Name>CadreManagement.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CadreManagement.Model\CadreManagement.Model.csproj">
+      <Project>{ACAC1FE9-6818-431B-A9BF-8FC6A53DFD03}</Project>
+      <Name>CadreManagement.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\CadreManagement.Repository\CadreManagement.Repository.csproj">
       <Project>{A7AA0758-8120-41E4-B44C-456EA1B77097}</Project>

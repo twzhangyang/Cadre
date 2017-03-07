@@ -2,7 +2,7 @@
 using System.Diagnostics.Contracts;
 using CadreManagement.Domain.Exceptions;
 using CadreManagement.Core.Extensions;
-using CadreManagement.DomainModel;
+using CadreManagement.Model;
 
 namespace CadreManagement.Domain.User
 {

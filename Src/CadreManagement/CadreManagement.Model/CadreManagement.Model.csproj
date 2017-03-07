@@ -7,8 +7,8 @@
     <ProjectGuid>{ACAC1FE9-6818-431B-A9BF-8FC6A53DFD03}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CadreManagement.DomainModel</RootNamespace>
-    <AssemblyName>CadreManagement.DomainModel</AssemblyName>
+    <RootNamespace>CadreManagement.Model</RootNamespace>
+    <AssemblyName>CadreManagement.Model</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserModel.cs" />
   </ItemGroup>

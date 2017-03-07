@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CadreManagement.DomainModel
+namespace CadreManagement.Model
 {
     public class UserModel
     {

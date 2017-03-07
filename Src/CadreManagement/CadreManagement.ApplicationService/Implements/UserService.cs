@@ -4,7 +4,7 @@ using System.Linq;
 using CadreManagement.ApplicationService.Contracts;
 using CadreManagement.ApplicationService.Exceptions;
 using CadreManagement.Domain.User;
-using CadreManagement.DomainModel;
+using CadreManagement.Model;
 using CadreManagement.Repository.Contracts;
 
 namespace CadreManagement.ApplicationService.Implements
