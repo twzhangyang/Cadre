@@ -10,7 +10,7 @@ import { IProduct } from './../product';
 
 @Injectable()
 export class ProductListService {
-    private _productUrl = 'assets/mock-data/products/products.json';
+    private _productUrl = 'http://cadreapi.local.com/api/product/products';
 
     constructor(private _http: Http) {
     }
