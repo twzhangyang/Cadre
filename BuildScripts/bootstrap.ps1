@@ -18,8 +18,12 @@ $rootDir=$rootDir | Split-Path
 $global:solutionRoot = $rootDir
 $global:scriptRoot = $PSScriptRoot
 
+Write-Host "`$global:solutionRoot`=$global:solutionRoot"
+Write-Host "`$global:scriptRoot`=$global:scriptRoot"
+
 Import-Module "$PSScriptRoot\Run-Task.psm1" -Force
 
 Run-task $task
+
 
 

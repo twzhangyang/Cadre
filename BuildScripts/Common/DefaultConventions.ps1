@@ -4,8 +4,9 @@ Write-Host "conventions"
 $conventions = @{}
 #solution folder
 $conventions.rootDir=$global:solutionRoot
-$conventions.solutionPath="$global:solutionRoot\firstWebApp.sln"
-$conventions.website1Folder="$global:solutionRoot\WebApp"
+$conventions.solutionPath="$global:solutionRoot\Src\CadreManagement\CadreManagement.sln"
+$conventions.webapiFolder="$global:solutionRoot\Src\CadreManagement\CadreManagement.WebApi"
+$conventions.website="$global:solutionRoot\Src\CadreManagement\CadreManagement.Web"
 
 #buildScript folder
 $conventions.scriptRoot=$global:scriptRoot
@@ -15,16 +16,17 @@ $conventions.artifactsFolder="$global:solutionRoot\Artifacts"
 $conventions.binFolder="$global:solutionRoot\Artifacts\Bin"
 
 #artifact\web
-$conventions.webArtifactsFolder="$global:solutionRoot\Artifacts\Web"
-$conventions.website1ArtifactsFolder="$global:solutionRoot\Artifacts\Web\WebApp"
-$conventions.website1ArtifactsBinFolder="$global:solutionRoot\Artifacts\Web\WebApp\Bin"
+$conventions.websiteArtifactsFolder="$global:solutionRoot\Artifacts\Web"
+$conventions.webapiArtifactsFolder="$global:solutionRoot\Artifacts\WebApi"
 
 #artifact\zip
 $conventions.artifactsZipFolder="$global:solutionRoot\Artifacts\zip"
-$conventions.website1ZipPath="$global:solutionRoot\Artifacts\zip\WebApp.zip"
+$conventions.websiteZipPath="$global:solutionRoot\Artifacts\zip\Web.zip"
+$conventions.webapiZipPath="$global:solutionRoot\Artifacts\zip\WebApi.zip"
 
 #website
-$conventions.website1DeployFolder="C:\inetpub\wwwroot\firstWeb"
+$conventions.websiteDeployFolder="C:\inetpub\wwwroot\cadre"
+$conventions.webapiDeployFolder="C:\inetpub\wwwroot\cadreapi"
 
 
 "Conventions being used:"

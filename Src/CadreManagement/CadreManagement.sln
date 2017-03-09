@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadreManagement.DomainUnitT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadreManagement.Model", "CadreManagement.Model\CadreManagement.Model.csproj", "{ACAC1FE9-6818-431B-A9BF-8FC6A53DFD03}"
 EndProject
+Project("{F5034706-568F-408A-B7B3-4D38C6DB8A32}") = "BuildScripts", "..\..\BuildScripts\BuildScripts.pssproj", "{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{ACAC1FE9-6818-431B-A9BF-8FC6A53DFD03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACAC1FE9-6818-431B-A9BF-8FC6A53DFD03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACAC1FE9-6818-431B-A9BF-8FC6A53DFD03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CAFC0C6-A428-4D30-A9F9-700E829FEA51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

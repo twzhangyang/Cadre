@@ -92,10 +92,15 @@ task -name CleanBuildArtifacts -description "delete all build artifacts artifact
 }
 
 task -name CleanWebArtifacts -description "delete artifacts\web folder" -action{
-	$webArtifacts=Get-Conventions webArtifactsFolder
+	$webArtifacts=Get-Conventions websiteArtifactsFolder
 
 	Remove-Item $webArtifacts -Force -Recurse -ErrorAction SilentlyContinue
 	Create-Directory($webArtifacts)
+
+
+	$webapiArtifacts=Get-Conventions webapiArtifactsFolder
+	Remove-Item $webapiArtifacts -Force -Recurse -ErrorAction SilentlyContinue
+	Create-Directory($webapiArtifacts)
 }
 
 function Remove-Recurse($buildPath) {
