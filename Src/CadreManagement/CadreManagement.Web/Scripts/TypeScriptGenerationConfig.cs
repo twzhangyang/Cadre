@@ -13,7 +13,8 @@ namespace CadreManagement.Web.Scripts
                 .ForLoadedAssemblies()
                 .WithMemberFormatter((identifier) =>
                         Char.ToLower(identifier.Name[0]) + identifier.Name.Substring(1))
-                .For(typeof(ViewModel<>).Assembly);
+                .For(typeof(ViewModel<>).Assembly)
+                .For(typeof(CadreManagement.Web.HyperMediaApi.HyperMediaCommand<>).Assembly);
         }
     }
 }

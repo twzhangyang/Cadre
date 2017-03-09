@@ -1,0 +1,9 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title" ng-bind-html="dialogParameter.title"></h3>
+</div>
+<div class="modal-body" ng-bind-html="dialogParameter.content">
+</div>
+<div class="modal-footer">
+    <a class="btn btn-warning" ng-click="ok()">{{dialogParameter.confirmButtonText}}</a>
+    <a class="btn btn-warning" ng-click="cancel()">{{dialogParameter.cancelButtonText}}</a>
+</div>
