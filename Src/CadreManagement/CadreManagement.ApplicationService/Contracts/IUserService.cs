@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using CadreManagement.Model;
 
 namespace CadreManagement.ApplicationService.Contracts
@@ -12,5 +13,7 @@ namespace CadreManagement.ApplicationService.Contracts
         bool Login(string email, string password);
 
         void ChangePassword(Guid id, string originalPassword, string newPassword);
+
+        List<UserModel> GetUsers();
     }
 }

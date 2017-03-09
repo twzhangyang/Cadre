@@ -147,7 +147,6 @@
   <ItemGroup>
     <Compile Include="ApplicationBootstrap.cs" />
     <Compile Include="App_Start\ExceptionLoggerFilter.cs" />
-    <Compile Include="App_Start\Log4NetExceptionFilter.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="ContainerInstallers\ApiControllerInstaller.cs" />
     <Compile Include="Controllers\HomeController.cs" />

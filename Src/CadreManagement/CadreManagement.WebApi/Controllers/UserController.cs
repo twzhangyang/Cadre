@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 using CadreManagement.ApplicationService.Contracts;
 using CadreManagement.Model;
@@ -6,7 +7,7 @@ using Castle.Core.Internal;
 
 namespace CadreManagement.WebApi.Controllers
 {
-    [RoutePrefix("api/users")]
+    [RoutePrefix("api/user")]
     public class UserController:ApiController
     {
         private readonly IUserService _userService;
@@ -14,6 +15,12 @@ namespace CadreManagement.WebApi.Controllers
         public UserController(IUserService userService)
         {
             _userService = userService;
+        }
+
+        [HttpGet,Route("users")]
+        public List<UserModel> GetUsers()
+        {
+            return _userService.GetUsers();
         }
 
         [HttpGet]

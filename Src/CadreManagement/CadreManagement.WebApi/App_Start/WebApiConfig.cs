@@ -32,7 +32,6 @@ namespace CadreManagement.WebApi
             jsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
             config.Filters.Add(new ExceptionLoggerFilter());
-            config.Filters.Add(new Log4NetExceptionFilter());
         }
     }
 }

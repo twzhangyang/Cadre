@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using CadreManagement.ApplicationService.Contracts;
@@ -24,6 +25,11 @@ namespace CadreManagement.ApplicationService.Implements
 
             var user = _userRepository.Get(id);
 
+            return Transform(user);
+        }
+
+        private UserModel Transform(User user)
+        {
             return new UserModel()
             {
                 Id = user.Id,
@@ -72,6 +78,11 @@ namespace CadreManagement.ApplicationService.Implements
             user.ChangePassword(originalPassword, newPassword);
 
             _userRepository.Update(user);
+        }
+
+        public List<UserModel> GetUsers()
+        {
+            return _userRepository.GetAll().Select(Transform).ToList();
         }
     }
 }
