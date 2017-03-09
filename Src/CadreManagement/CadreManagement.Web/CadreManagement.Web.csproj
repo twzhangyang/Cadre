@@ -260,7 +260,6 @@
     <TypeScriptCompile Include="src\app\about\about.component.spec.ts" />
     <TypeScriptCompile Include="src\app\about\about.component.ts" />
     <TypeScriptCompile Include="src\app\about\index.ts" />
-    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\app.resolver.ts" />
@@ -449,6 +448,17 @@
       <Project>{f5c3decc-faa1-404d-a8aa-6710982f2488}</Project>
       <Name>CadreManagement.WebApi</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -21,5 +21,13 @@ namespace CadreManagement.Core.Extensions
 
             return !@this.Any(predicate);
         }
+
+        public static void ForEach<T>(this IEnumerable<T> @this, Action<T> action)
+        {
+            foreach (var item in @this)
+            {
+                action(item);
+            }
+        }
     }
 }

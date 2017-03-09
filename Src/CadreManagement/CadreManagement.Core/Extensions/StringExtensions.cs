@@ -6,5 +6,10 @@
         {
             return string.IsNullOrEmpty(@string);
         }
+
+        public static string FormatWith(this string @string,params object[] parameters)
+        {
+            return string.Format(@string, parameters);
+        }
     }
 }
