@@ -1,8 +1,10 @@
 ﻿using System;
+using TypeLite;
 
 namespace CadreManagement.WebApi.Models
 {
-    public class Product
+    [TsClass]
+    public class Product:ViewModel<Product>
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }
