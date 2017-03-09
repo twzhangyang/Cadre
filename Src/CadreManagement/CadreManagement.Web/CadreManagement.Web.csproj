@@ -162,6 +162,7 @@
     <Content Include="src\app\app.component.html" />
     <Content Include="src\app\dashboard\dashboard.component.html" />
     <Content Include="src\app\dashboard\home\home.component.html" />
+    <Content Include="src\app\dashboard\icons\icons.component.html" />
     <Content Include="src\app\dashboard\maps\maps.component.html" />
     <Content Include="src\app\dashboard\notifications\notifications.component.html" />
     <Content Include="src\app\dashboard\table\table.component.html" />
@@ -248,6 +249,7 @@
     <TypeScriptCompile Include="src\app\dashboard\dashboard.module.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard.routes.ts" />
     <TypeScriptCompile Include="src\app\dashboard\home\home.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\icons\icons.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\maps\maps.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\notifications\notifications.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\table\table.component.ts" />
@@ -414,9 +416,7 @@
   <ItemGroup>
     <Content Include="src\assets\mock-data\products\products.json" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\app\dashboard\icons\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
