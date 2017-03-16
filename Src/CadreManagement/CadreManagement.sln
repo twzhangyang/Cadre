@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{7A9C53D8-641
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadreManagement.Web.HyperMediaApi", "CadreManagement.Web.HyperMediaApi\CadreManagement.Web.HyperMediaApi.csproj", "{B75573B8-AB6A-4169-B6B2-FBD39626ADAA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadreManagement.Angular2.Practice", "CadreManagement.Angular2.Practice\CadreManagement.Angular2.Practice.csproj", "{6C38D1B4-AA5E-483C-A83B-3C95D4B0B10F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{B75573B8-AB6A-4169-B6B2-FBD39626ADAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B75573B8-AB6A-4169-B6B2-FBD39626ADAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B75573B8-AB6A-4169-B6B2-FBD39626ADAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C38D1B4-AA5E-483C-A83B-3C95D4B0B10F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C38D1B4-AA5E-483C-A83B-3C95D4B0B10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C38D1B4-AA5E-483C-A83B-3C95D4B0B10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C38D1B4-AA5E-483C-A83B-3C95D4B0B10F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,5 +97,6 @@ Global
 		{CA2A6C34-74C1-4001-B296-FF535178F4FC} = {9E5346A2-491E-4189-85E8-4514CECBA934}
 		{ACAC1FE9-6818-431B-A9BF-8FC6A53DFD03} = {D38D3FDF-866D-4474-8338-BFDC2A5432DD}
 		{B75573B8-AB6A-4169-B6B2-FBD39626ADAA} = {7A9C53D8-641A-4482-997A-3924A82C1AF3}
+		{6C38D1B4-AA5E-483C-A83B-3C95D4B0B10F} = {7A9C53D8-641A-4482-997A-3924A82C1AF3}
 	EndGlobalSection
 EndGlobal
