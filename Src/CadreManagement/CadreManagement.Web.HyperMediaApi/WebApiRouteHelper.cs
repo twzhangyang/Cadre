@@ -12,15 +12,16 @@ namespace CadreManagement.Web.HyperMediaApi
         private const string RootUriTemplate = "{0}://{1}/api";
 
 
-        //Review:mlidbo: extract this and clean it up.
         private static string Protocol
         {
             get
             {
-                var domainsString = ConfigurationManager.AppSettings["DomainsUsingSSL"] ?? string.Empty;
-                var domains = domainsString.Split(',').Select(me => me.Trim());
-                var useSSL = domains.Any(domain => !string.IsNullOrWhiteSpace(domain) && HttpContext.Current.Request.Url.Host.EndsWith(domain));
-                return useSSL ? "https" : "http";
+                //var domainsString = ConfigurationManager.AppSettings["DomainsUsingSSL"] ?? string.Empty;
+                //var domains = domainsString.Split(',').Select(me => me.Trim());
+                //var useSSL = domains.Any(domain => !string.IsNullOrWhiteSpace(domain) && HttpContext.Current.Request.Url.Host.EndsWith(domain));
+                //return useSSL ? "https" : "http";
+
+                return "http";
             }
         }
     }

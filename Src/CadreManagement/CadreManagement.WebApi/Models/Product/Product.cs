@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Web.Http.Routing;
+using CadreManagement.Web.HyperMediaApi;
+using CadreManagement.WebApi.Controllers;
 using TypeLite;
 
-namespace CadreManagement.WebApi.Models
+namespace CadreManagement.WebApi.Models.Product
 {
     [TsClass]
-    public class Product:ViewModel<Product>
+    public class Product
     {
         public int ProductId { get; set; }
         public string ProductName { get; set; }
@@ -15,4 +19,5 @@ namespace CadreManagement.WebApi.Models
         public decimal StarRating { get; set; }
         public string ImageUrl { get; set; }
     }
+
 }

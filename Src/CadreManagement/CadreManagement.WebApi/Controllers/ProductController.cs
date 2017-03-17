@@ -3,141 +3,63 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 using CadreManagement.WebApi.Models;
+using CadreManagement.WebApi.Models.Product;
+using CadreManagement.WebApi.Providers;
 
 namespace CadreManagement.WebApi.Controllers
 {
     [RoutePrefix("api/product")]
     public class ProductController:ApiController
     {
-        [HttpGet,Route("products")]
-        public List<Product> GetProducts()
+        private readonly ProductProvider _productProvider;
+
+        public ProductController(ProductProvider productProvider)
         {
-            return CreateProducts();
+            _productProvider = productProvider;
+        }
+
+        [HttpGet,Route("home")]
+        public ProductHomeResource Home()
+        {
+            return new ProductHomeResource(Url);
+        }
+
+        [HttpGet,Route("products")]
+        public ProductsResource GetProducts()
+        {
+            var products = _productProvider.GetProducts();
+
+            var resource=new ProductsResource(Url,products);
+            return resource;
         }
 
         [HttpGet,Route("products/{id}")]
-        public Product GetProduct(int id)
+        public ProductResource GetProduct(int id)
         {
-            return CreateProducts().First(x => x.ProductId == id);
+            var product = _productProvider.GetProducts()
+                .Single(x=>x.ProductId==id);
+            var resource=new ProductResource(Url,product);
+
+            return resource;
         }
 
-        private List<Product> CreateProducts()
+        [HttpPost,Route("products/add")]
+        public ProductAddedResponse AddProduct(ProductAddedCommand command)
         {
-            var products = new List<Product>();
-            products.Add(new Product()
-            {
-                ProductId = 1,
-                ProductName = "Leaf Rake",
-                ProductCode = "GDN-0011",
-                ReleaseDate = DateTime.Now,
-                Description = "Leaf rake with 48-inch wooden handle.",
-                Price = 19.95m,
-                StarRating = 3.2m,
-                ImageUrl = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-            });
+            var product= _productProvider.AddProduct(command);
+            var response=new ProductAddedResponse(Url, product);
 
-            products.Add(new Product()
-            {
-                ProductId = 2,
-                ProductName = "Leaf Rake2",
-                ProductCode = "GDN-0011",
-                ReleaseDate = DateTime.Now,
-                Description = "Leaf rake with 48-inch wooden handle.",
-                Price = 19.95m,
-                StarRating = 3.2m,
-                ImageUrl = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-            });
-
-            products.Add(new Product()
-            {
-                ProductId = 3,
-                ProductName = "Leaf Rake2",
-                ProductCode = "GDN-0011",
-                ReleaseDate = DateTime.Now,
-                Description = "Leaf rake with 48-inch wooden handle.",
-                Price = 19.95m,
-                StarRating = 3.2m,
-                ImageUrl = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-            });
-
-            products.Add(new Product()
-            {
-                ProductId = 4,
-                ProductName = "Leaf Rake4",
-                ProductCode = "GDN-0011",
-                ReleaseDate = DateTime.Now,
-                Description = "Leaf rake with 48-inch wooden handle.",
-                Price = 19.95m,
-                StarRating = 3.2m,
-                ImageUrl = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-            });
-            products.Add(new Product()
-            {
-                ProductId = 5,
-                ProductName = "Leaf Rake5",
-                ProductCode = "GDN-0011",
-                ReleaseDate = DateTime.Now,
-                Description = "Leaf rake with 48-inch wooden handle.",
-                Price = 19.95m,
-                StarRating = 3.2m,
-                ImageUrl = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-            });
-            products.Add(new Product()
-            {
-                ProductId = 6,
-                ProductName = "Leaf Rake6",
-                ProductCode = "GDN-0011",
-                ReleaseDate = DateTime.Now,
-                Description = "Leaf rake with 48-inch wooden handle.",
-                Price = 19.95m,
-                StarRating = 3.2m,
-                ImageUrl = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-            });
-            products.Add(new Product()
-            {
-                ProductId = 7,
-                ProductName = "Leaf Rake7",
-                ProductCode = "GDN-0011",
-                ReleaseDate = DateTime.Now,
-                Description = "Leaf rake with 48-inch wooden handle.",
-                Price = 19.95m,
-                StarRating = 3.2m,
-                ImageUrl = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-            });
-            products.Add(new Product()
-            {
-                ProductId = 8,
-                ProductName = "Leaf Rake8",
-                ProductCode = "GDN-0011",
-                ReleaseDate = DateTime.Now,
-                Description = "Leaf rake with 48-inch wooden handle.",
-                Price = 19.95m,
-                StarRating = 3.2m,
-                ImageUrl = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-            });
-            products.Add(new Product()
-            {
-                ProductId = 9,
-                ProductName = "Leaf Rake9",
-                ProductCode = "GDN-0011",
-                ReleaseDate = DateTime.Now,
-                Description = "Leaf rake with 48-inch wooden handle.",
-                Price = 19.95m,
-                StarRating = 3.2m,
-                ImageUrl = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-            });
-            products.Add(new Product()
-            {
-                ProductId = 10,
-                ProductName = "Leaf Rake10",
-                ProductCode = "GDN-0011",
-                ReleaseDate = DateTime.Now,
-                Description = "Leaf rake with 48-inch wooden handle.",
-                Price = 19.95m,
-                StarRating = 3.2m,
-                ImageUrl = "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
-            });
-            return products;
+            return response;
         }
+
+        [HttpPost,Route("products/remove")]
+        public ProductRemovedResponse RemoveProduct(ProductRemovedCommand command)
+        {
+            var result = _productProvider.RemoveProduct(command);
+            var response=new ProductRemovedResponse(Url, result);
+
+            return response;
+        }
+     
     }
 }

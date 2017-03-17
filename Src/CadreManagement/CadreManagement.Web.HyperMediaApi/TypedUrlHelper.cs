@@ -55,14 +55,14 @@ namespace CadreManagement.Web.HyperMediaApi
             return UrlSanitizer.SanitizeUrl(link, routeValues);
         }
 
-        public static string Action<TController, TResult>(
-            this UrlHelper @this,
-            Expression<Func<TController, TResult>> actionSelector) where TController : Controller
-        {
-            var routeValues = RouteValueExtractor.ExtractMvcRouteParameters<TController>(actionSelector);
-            var virtualPath = RouteTable.Routes.GetVirtualPath(new HttpRequestWrapper(HttpContext.Current.Request).RequestContext, new RouteValueDictionary(routeValues.RouteValueDictionary));
+        //public static string Action<TController, TResult>(
+        //    this UrlHelper @this,
+        //    Expression<Func<TController, TResult>> actionSelector) where TController : Controller
+        //{
+        //    var routeValues = RouteValueExtractor.ExtractMvcRouteParameters<TController>(actionSelector);
+        //    var virtualPath = RouteTable.Routes.GetVirtualPath(new HttpRequestWrapper(HttpContext.Current.Request).RequestContext, new RouteValueDictionary(routeValues.RouteValueDictionary));
 
-            return virtualPath.VirtualPath;
-        }
+        //    return virtualPath.VirtualPath;
+        //}
     }
 }

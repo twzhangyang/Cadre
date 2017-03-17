@@ -10,11 +10,12 @@ namespace CadreManagement.Web.HyperMediaApi
             Uri = uri;
         }
 
-        override public string ToString()
+        public override string ToString()
         {
             return Uri;
         }
 
         public string Uri { get; private set; } 
+      
     }
 }

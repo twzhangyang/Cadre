@@ -163,15 +163,26 @@
     <Compile Include="App_Start\ExceptionLoggerFilter.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="ContainerInstallers\ApiControllerInstaller.cs" />
+    <Compile Include="ContainerInstallers\ProviderInstaller.cs" />
+    <Compile Include="ContainerInstallers\UrlHelperInstaller.cs" />
+    <Compile Include="Controllers\CadreHomeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ViewModel.cs" />
+    <Compile Include="Models\CadreResource.cs" />
+    <Compile Include="Models\Product\ProductAddedCommand.cs" />
+    <Compile Include="Models\Product\ProductAddedResponse.cs" />
+    <Compile Include="Models\Product\ProductHomeResource.cs" />
+    <Compile Include="Models\Product\Product.cs" />
+    <Compile Include="Models\Product\ProductRemovedCommand.cs" />
+    <Compile Include="Models\Product\ProductResource.cs" />
+    <Compile Include="Models\Product\ProductRemovedResponse.cs" />
+    <Compile Include="Models\Product\ProductsResource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ProductProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -205,6 +216,10 @@
     <ProjectReference Include="..\CadreManagement.Repository\CadreManagement.Repository.csproj">
       <Project>{A7AA0758-8120-41E4-B44C-456EA1B77097}</Project>
       <Name>CadreManagement.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CadreManagement.Web.HyperMediaApi\CadreManagement.Web.HyperMediaApi.csproj">
+      <Project>{B75573B8-AB6A-4169-B6B2-FBD39626ADAA}</Project>
+      <Name>CadreManagement.Web.HyperMediaApi</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
