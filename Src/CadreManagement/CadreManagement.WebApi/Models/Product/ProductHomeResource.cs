@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Http.Routing;
 using CadreManagement.Web.HyperMediaApi;
 using CadreManagement.WebApi.Controllers;
@@ -7,29 +8,35 @@ namespace CadreManagement.WebApi.Models.Product
 {
     public class ProductHomeResource
     {
-        private readonly UrlHelper _urlHelper;
+        [Obsolete("For Serialization")]
+        public ProductHomeResource()
+        {
+        }
 
         public ProductHomeResource(UrlHelper urlHelper)
         {
-            _urlHelper = urlHelper;
+            ResourceLinks = new Links(urlHelper);
         }
 
-        public Links ResourceLinks => new Links()
-        {
-            Self = _urlHelper.Link((ProductController c) => c.Home()),
-            Products = _urlHelper.Link((ProductController c) => c.GetProducts()),
-            Product = _urlHelper.LinkTemplate((ProductController c, int id) => c.GetProduct(id)),
-            AddProduct = _urlHelper.Link((ProductController c) => c.AddProduct(null)),
-            RemoveProduct = _urlHelper.Link((ProductController c) => c.RemoveProduct(null))
-        };
+        public Links ResourceLinks { get; set; }
 
         public class Links
         {
+            [Obsolete("For Serialization")]
+            public Links()
+            {
+
+            }
+            public Links(UrlHelper urlHelper)
+            {
+                Self = urlHelper.Link((ProductController c) => c.Home());
+                Products = urlHelper.Link((ProductController c) => c.GetProducts());
+                Product = urlHelper.LinkTemplate((ProductController c, int id) => c.GetProduct(id));
+            }
+
             public Link<ProductHomeResource> Self { get; set; }
             public Link<ProductsResource> Products { get; set; }
             public LinkTemplate1<ProductResource, int> Product { get; set; }
-            public Link<ProductAddedResponse> AddProduct { get; set; }
-            public Link<ProductRemovedResponse> RemoveProduct { get; set; }
         }
     }
 }

@@ -162,7 +162,9 @@
     <Compile Include="ApplicationBootstrap.cs" />
     <Compile Include="App_Start\ExceptionLoggerFilter.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="CadreApiNavigator.cs" />
     <Compile Include="ContainerInstallers\ApiControllerInstaller.cs" />
+    <Compile Include="ContainerInstallers\CadreApiNavigatorInstaller.cs" />
     <Compile Include="ContainerInstallers\ProviderInstaller.cs" />
     <Compile Include="ContainerInstallers\UrlHelperInstaller.cs" />
     <Compile Include="Controllers\CadreHomeController.cs" />

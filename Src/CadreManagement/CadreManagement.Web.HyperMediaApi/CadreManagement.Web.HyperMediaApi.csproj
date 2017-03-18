@@ -186,6 +186,7 @@
     <Compile Include="Json\JsonSerializerSettings.cs" />
     <Compile Include="Link.cs" />
     <Compile Include="LinkNavigator.cs" />
+    <Compile Include="SyncLinkNavigator.cs" />
     <Compile Include="LinkTemplate1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropertyInfoHelper.cs" />

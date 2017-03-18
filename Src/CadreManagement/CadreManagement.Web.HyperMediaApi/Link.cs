@@ -1,10 +1,17 @@
-﻿using TypeLite;
+﻿using System;
+using TypeLite;
 
 namespace CadreManagement.Web.HyperMediaApi
 {
     [TsClass]
     public class Link<TResource>
     {
+        [Obsolete("For Serialization")]
+        public Link()
+        {
+            
+        }
+
         public Link(string uri)
         {
             Uri = uri;
@@ -15,7 +22,7 @@ namespace CadreManagement.Web.HyperMediaApi
             return Uri;
         }
 
-        public string Uri { get; private set; } 
+        public string Uri { get;  set; } 
       
     }
 }

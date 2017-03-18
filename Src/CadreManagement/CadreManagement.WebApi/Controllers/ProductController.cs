@@ -18,13 +18,13 @@ namespace CadreManagement.WebApi.Controllers
             _productProvider = productProvider;
         }
 
-        [HttpGet,Route("home")]
+        [HttpGet,Route("home",Name = "B2AE8D4C-CE80-4EE9-9973-65A29858F4D9")]
         public ProductHomeResource Home()
         {
             return new ProductHomeResource(Url);
         }
 
-        [HttpGet,Route("products")]
+        [HttpGet,Route("products",Name = "9094C01E-EB66-42D7-8911-0144F8317DAC")]
         public ProductsResource GetProducts()
         {
             var products = _productProvider.GetProducts();
@@ -33,7 +33,7 @@ namespace CadreManagement.WebApi.Controllers
             return resource;
         }
 
-        [HttpGet,Route("products/{id}")]
+        [HttpGet,Route("products/{id}",Name = "8EA9168B-B1F0-4E3D-AFCD-6842405908BE")]
         public ProductResource GetProduct(int id)
         {
             var product = _productProvider.GetProducts()
@@ -43,7 +43,7 @@ namespace CadreManagement.WebApi.Controllers
             return resource;
         }
 
-        [HttpPost,Route("products/add")]
+        [HttpPost,Route("products/add",Name = "A744DA75-BD38-4259-AAA7-14B73C1FCE74")]
         public ProductAddedResponse AddProduct(ProductAddedCommand command)
         {
             var product= _productProvider.AddProduct(command);
@@ -52,7 +52,7 @@ namespace CadreManagement.WebApi.Controllers
             return response;
         }
 
-        [HttpPost,Route("products/remove")]
+        [HttpPost,Route("products/remove",Name = "AC260BDA-355F-4D84-8B3B-D41B5B628AAF")]
         public ProductRemovedResponse RemoveProduct(ProductRemovedCommand command)
         {
             var result = _productProvider.RemoveProduct(command);

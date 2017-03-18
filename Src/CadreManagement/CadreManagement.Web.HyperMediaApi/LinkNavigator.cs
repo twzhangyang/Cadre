@@ -1,135 +1,54 @@
 ﻿using System;
-using System.Net;
 using System.Net.Http;
-using System.Net.Http.Formatting;
-using System.Security.Principal;
-using System.Text;
-using System.Threading;
 using System.Web;
-using System.Web.Http;
-using CadreManagement.Core.Extensions;
-using Manpower.Applications.Shared.HyperMediaApi.Json;
 using Newtonsoft.Json;
 
 namespace CadreManagement.Web.HyperMediaApi
 {
     public class LinkNavigator<TResource>
     {
-        private readonly HttpServer _server;
-        public Link<TResource> Link { get; set; }
+        private readonly Link<TResource> _startLink;
 
-        protected LinkNavigator(HttpServer server)
+        protected LinkNavigator() { }
+
+        public LinkNavigator(Link<TResource> startLink)
         {
-            _server = server;
+            _startLink = startLink;
         }
 
-        public LinkNavigator(Link<TResource> startLink, HttpServer server)
+        protected TTargetResource FetchUri<TTargetResource>(Link<TTargetResource> link)
         {
-            _server = server;
-            Link = startLink;
-        }
-
-        public virtual TResource Execute()
-        {
-            return FetchUri(Link);
-        }
-
-        protected TResourceToFetch FetchUri<TResourceToFetch>(Link<TResourceToFetch> link)
-        {
-            var requestInvoker = new HttpMessageInvoker(_server);
-            using(var request = new HttpRequestMessage(HttpMethod.Get, link.Uri))
+            using (var client = new HttpClient())
             {
-                request.SetConfiguration(_server.Configuration);
-
-                var cts = new CancellationTokenSource();
-                using(var response = requestInvoker.SendAsync(request, cts.Token))
-                {
-                    using(var result = response.Result)
-                    {
-                        using(var httpContent = result.Content)
-                        {
-                            var resultData = httpContent.ReadAsStringAsync().Result;
-                            if(result.IsSuccessStatusCode == false)
-                            {
-                                var exceptionMessage = "Http operation unsuccessful\nStatus: '{0}'\"Reason: '{1}'\n\nResponse:\n{2}".FormatWith(result.StatusCode,
-                                    result.ReasonPhrase,
-                                    resultData);
-                                throw new Exception(exceptionMessage);
-                            }
-
-                            var fetchedResource = DeserializeJson<TResourceToFetch>(resultData);
-
-                            return fetchedResource;
-                        }
-                    }
-                }
+                return JsonConvert.DeserializeObject<TTargetResource>(client.GetStringAsync(link.Uri).Result);
             }
         }
 
-        public TResultResource PostCommand<TResultResource>(HyperMediaCommand<TResultResource> command)
+        public SubLinkNavigator<TTargetResource, TResource> FollowLink<TTargetResource>(
+            Func<TResource, Link<TTargetResource>> navigator)
         {
-            var requestInvoker = new HttpMessageInvoker(_server);
-            using (var request = new HttpRequestMessage(HttpMethod.Post, command.PostUrl.Uri))
+            return new SubLinkNavigator<TTargetResource, TResource>(this,navigator);
+        }
+
+        public SubLinkNavigator<TTargetResource,TResource> FollowWithTemplate<TTargetResource,TArgument1>(Func<TResource,LinkTemplate1<TTargetResource, TArgument1>> navigator, TArgument1 argument1)
+        {
+            return new SubLinkNavigator<TTargetResource, TResource>(this, resource=>navigator(resource).CreateLink(argument1));
+        }
+
+        public virtual  TResource Execute()
+        {
+            return FetchUri(_startLink);
+        }
+
+        public TResultResponse PostCommand<TResultResponse>(HyperMediaCommand<TResultResponse> command)
+        {
+            using (var client = new HttpClient())
             {
-                request.Content=new ObjectContent(command.GetType(),command,new JsonMediaTypeFormatter());
-                request.SetConfiguration(_server.Configuration);
-
-                var cts = new CancellationTokenSource();
-                using (var response = requestInvoker.SendAsync(request, cts.Token))
-                {
-                    using (var result = response.Result)
-                    {
-                        using (var httpContent = result.Content)
-                        {
-                            var resultData = httpContent.ReadAsStringAsync().Result;
-                            if (result.IsSuccessStatusCode == false)
-                            {
-                                var exceptionMessage = "Http operation unsuccessful\nStatus: '{0}'\"Reason: '{1}'\n\nResponse:\n{2}".FormatWith(result.StatusCode,
-                                    result.ReasonPhrase,
-                                    resultData);
-                                throw new Exception(exceptionMessage);
-                            }
-
-                            var fetchedResource = DeserializeJson<TResultResource>(resultData);
-
-                            return fetchedResource;
-                        }
-                    }
-                }
+                var responseMessage = client.PostAsJsonAsync(new Uri(command.PostUrl.Uri), command).Result;
+                var responseText = responseMessage.Content.ReadAsStringAsync().Result;
+                return JsonConvert.DeserializeObject<TResultResponse>(responseText);
             }
         }
 
-
-        private static void UsingWebClient(Action<WebClient> useWebClient)
-        {
-            var windowsIdentity = (WindowsIdentity)HttpContext.Current.User.Identity;
-
-            using (windowsIdentity.Impersonate())
-            {
-                using (var client = new WebClient()
-                {
-                    Encoding = Encoding.UTF8,
-                    UseDefaultCredentials = true
-                })
-                {
-                    useWebClient(client);
-                }
-            }
-        }
-
-        public SubLinkNavigator<TTargetResource, TResource> FollowLink<TTargetResource>(Func<TResource, Link<TTargetResource>> navigator)
-        {
-            return new SubLinkNavigator<TTargetResource, TResource>(this, navigator, _server);
-        }
-
-        public SubLinkNavigator<TTargetResource, TResource> FollowLinkTemplate<TTargetResource, TArgument>(Func<TResource, LinkTemplate1<TTargetResource, TArgument>> navigator, TArgument argument)
-        {
-            return new SubLinkNavigator<TTargetResource, TResource>(this, (resource) => navigator(resource).CreateLink(argument), _server);
-        }
-
-        private static TResultResource DeserializeJson<TResultResource>(string responseText)
-        {
-            return JsonConvert.DeserializeObject<TResultResource>(responseText, JsonSettings.JsonSerializerSettings);
-        }
     }
 }

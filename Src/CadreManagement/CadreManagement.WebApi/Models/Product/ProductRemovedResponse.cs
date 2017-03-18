@@ -1,4 +1,5 @@
-﻿using System.Web.Http.Routing;
+﻿using System;
+using System.Web.Http.Routing;
 using CadreManagement.Web.HyperMediaApi;
 using CadreManagement.WebApi.Controllers;
 
@@ -6,25 +7,33 @@ namespace CadreManagement.WebApi.Models.Product
 {
     public class ProductRemovedResponse
     {
-        private readonly UrlHelper _urlHelper;
 
+        [Obsolete("For Serialization")]
+        public ProductRemovedResponse()
+        {
+           
+        }
         public ProductRemovedResponse(UrlHelper urlHelper, bool result)
         {
-            _urlHelper = urlHelper;
             Result = result;
+            ResourceLinks=new Links(urlHelper);
         }
 
         public bool Result { get; set; }
 
-        public Links ResourceLinks => new Links()
-        {
-            Self = _urlHelper.Link((ProductController c) => c.RemoveProduct(null)),
-            Products = _urlHelper.Link((ProductController c) => c.GetProducts())
-        };
+        public Links ResourceLinks { get; set; }
 
         public class Links
         {
-            public Link<ProductRemovedResponse> Self { get; set; }
+            [Obsolete("For Serialization")]
+            public Links()
+            {
+                
+            }
+            public Links(UrlHelper urlHelper)
+            {
+                Products = urlHelper.Link((ProductController c) => c.GetProducts());
+            }
             public Link<ProductsResource> Products { get; set; }
         }
     }
