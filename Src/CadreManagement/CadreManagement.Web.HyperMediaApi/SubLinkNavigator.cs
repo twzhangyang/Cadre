@@ -8,7 +8,7 @@ namespace CadreManagement.Web.HyperMediaApi
         private readonly LinkNavigator<TParentResource> _parent;
         private readonly Func<TParentResource, Link<TResource>> _navigator;
 
-        public SubLinkNavigator(LinkNavigator<TParentResource> parent, Func<TParentResource, Link<TResource>> navigator)
+        public SubLinkNavigator(LinkNavigator<TParentResource> parent, Func<TParentResource, Link<TResource>> navigator,HttpServer server):base(server)
         {
             _parent = parent;
             _navigator = navigator;            

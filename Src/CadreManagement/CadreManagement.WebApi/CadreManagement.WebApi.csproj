@@ -168,7 +168,7 @@
     <Compile Include="ContainerInstallers\ProviderInstaller.cs" />
     <Compile Include="ContainerInstallers\UrlHelperInstaller.cs" />
     <Compile Include="Controllers\CadreHomeController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HyperMediaDemoController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">

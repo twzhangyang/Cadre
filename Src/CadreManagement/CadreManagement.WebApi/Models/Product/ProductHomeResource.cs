@@ -16,9 +16,30 @@ namespace CadreManagement.WebApi.Models.Product
         public ProductHomeResource(UrlHelper urlHelper)
         {
             ResourceLinks = new Links(urlHelper);
+            ResourceCommands=new Commands(urlHelper);
         }
 
         public Links ResourceLinks { get; set; }
+
+        public Commands ResourceCommands { get; set; }
+
+
+        public class Commands
+        {
+            [Obsolete("For Serialization")]
+            public Commands()
+            {
+            }
+
+            public Commands(UrlHelper urlHelper)
+            {
+                AddedCommand=new ProductAddedCommand(urlHelper);
+                RemovedCommand=new ProductRemovedCommand(urlHelper);
+            }
+
+            public ProductAddedCommand AddedCommand { get; set; }
+            public ProductRemovedCommand RemovedCommand { get; set; }
+        }
 
         public class Links
         {
