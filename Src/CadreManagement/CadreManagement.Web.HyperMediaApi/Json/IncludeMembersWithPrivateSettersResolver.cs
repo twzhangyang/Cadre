@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace Manpower.Applications.Shared.HyperMediaApi.Json
+namespace CadreManagement.Web.HyperMediaApi.Json
 {
     public class IncludeMembersWithPrivateSettersResolver : DefaultContractResolver
     {

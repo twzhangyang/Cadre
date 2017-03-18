@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Manpower.Applications.Shared.HyperMediaApi.Json
+namespace CadreManagement.Web.HyperMediaApi.Json
 {
     public static class JsonSettings
     {

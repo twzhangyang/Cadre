@@ -3,9 +3,11 @@ using System.Web.Http.Routing;
 using CadreManagement.Web.HyperMediaApi;
 using CadreManagement.WebApi.Controllers;
 using CadreManagement.WebApi.Models.Product;
+using TypeLite;
 
 namespace CadreManagement.WebApi.Models
 {
+    [TsClass]
     public class CadreResource
     {
 

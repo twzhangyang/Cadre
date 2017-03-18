@@ -8,7 +8,7 @@ using System.Threading;
 using System.Web;
 using System.Web.Http;
 using CadreManagement.Core.Extensions;
-using Manpower.Applications.Shared.HyperMediaApi.Json;
+using CadreManagement.Web.HyperMediaApi.Json;
 using Newtonsoft.Json;
 
 namespace CadreManagement.Web.HyperMediaApi
