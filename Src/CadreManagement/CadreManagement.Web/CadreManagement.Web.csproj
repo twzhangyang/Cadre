@@ -225,6 +225,8 @@
     <Content Include="src\assets\img\angularclass-logo.png" />
     <Content Include="src\assets\robots.txt" />
     <Content Include="src\assets\service-worker.js" />
+    <TypeScriptCompile Include="src\app\product\list\product-list.service.hypermedia.ts" />
+    <TypeScriptCompile Include="src\app\cadreApiNavigator.ts" />
     <Content Include="src\index.html" />
     <Content Include="src\meta\humans.txt" />
     <Content Include="src\meta\robots.txt" />
@@ -297,7 +299,6 @@
     <TypeScriptCompile Include="src\app\product\detail\product-detail.component.ts" />
     <TypeScriptCompile Include="src\app\product\list\product-filter.pipe.ts" />
     <TypeScriptCompile Include="src\app\product\product.module.ts" />
-    <TypeScriptCompile Include="src\app\product\product.ts" />
     <TypeScriptCompile Include="src\app\product\list\product-list.service.ts" />
     <TypeScriptCompile Include="src\app\shared\footer\footer.component.ts" />
     <TypeScriptCompile Include="src\app\shared\footer\footer.module.ts" />
@@ -312,6 +313,7 @@
     <TypeScriptCompile Include="src\app\sidebar\sidebar.module.ts" />
     <TypeScriptCompile Include="src\custom-typings.d.ts" />
     <TypeScriptCompile Include="src\HyperMediaApi\ApiNavigator.ts" />
+    <TypeScriptCompile Include="src\HyperMediaApi\ApiNavigator1.ts" />
     <TypeScriptCompile Include="src\HyperMediaApi\Hypermedia.ts" />
     <TypeScriptCompile Include="src\main.browser.aot.ts" />
     <TypeScriptCompile Include="src\main.browser.ts" />
@@ -466,9 +468,7 @@
       <DependentUpon>web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\HyperMediaApi\Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,6 +1,8 @@
-﻿import { Component, OnInit } from '@angular/core';
-import { IProduct } from './../product';
+﻿import Product = CadreManagement.WebApi.Models.Product;
+
+import { Component, OnInit } from '@angular/core';
 import { ProductListService } from './product-list.service';
+import {ProductListHyperMediaService} from './product-list.service.hypermedia';
 
 @Component({
     templateUrl: './product-list.component.html',
@@ -14,9 +16,9 @@ export class ProductListComponent implements OnInit {
     public listFilter: string;
     public errorMessage: string;
 
-    public products: IProduct[];
+    public products: Product.Product[];
 
-    constructor(private _productListService: ProductListService) {
+    constructor(private _productListService: ProductListService, private productHyperMediaService:ProductListHyperMediaService) {
 
     }
 
@@ -25,9 +27,12 @@ export class ProductListComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this._productListService.getProducts()
-            .subscribe(products => this.products = products,
-                error => this.errorMessage = <any>error);
+        //this._productListService.getProducts()
+        //    .subscribe(productsResource => this.products = productsResource.products,
+        //        error => this.errorMessage = <any>error);
+
+        this.productHyperMediaService.getProducts()
+            .subscribe(productsResource => this.products = productsResource.products);
     }
 
     public onRatingClicked(message: string): void {

@@ -41,13 +41,10 @@ namespace CadreManagement.Web.HyperMediaApi
         }
 
         private static string HackToFixLinkHostName(string link)
-        { 
-            if (HttpContext.Current.Request.UrlReferrer != null)
-            {
-                var correctHostSection = "//{0}/".FormatWith(HttpContext.Current.Request.UrlReferrer.Host);
-                var currentHostSection = "//{0}/".FormatWith(HttpContext.Current.Request.Url.Host);
-                link = link.Replace(currentHostSection, correctHostSection);
-            }
+        {
+            var correctHostSection = "//{0}/".FormatWith("cadreapi.local.com");
+            var currentHostSection = "//{0}/".FormatWith(HttpContext.Current.Request.Url.Host);
+            link = link.Replace(currentHostSection, correctHostSection);
             return link;
         }
 

@@ -20,6 +20,7 @@ import {
  */
 import { ENV_PROVIDERS } from './environment';
 import { ROUTES } from './app.routes';
+import { CadreApiNavigator } from './cadreApiNavigator';
 // App is our top level component
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
@@ -29,7 +30,7 @@ import { SidebarModule } from './sidebar/sidebar.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { DashboardModule } from './dashboard/dashboard.module';
-import {DashboardComponent} from './dashboard/dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 // test
 import { HelloComponent } from './hello';
@@ -82,6 +83,7 @@ type StoreType = {
     providers: [// expose our Services and Providers into Angular's dependency injection
         ENV_PROVIDERS,
         APP_PROVIDERS,
+        CadreApiNavigator
     ]
 })
 export class AppModule {

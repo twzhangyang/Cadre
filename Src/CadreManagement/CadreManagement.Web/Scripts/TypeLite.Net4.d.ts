@@ -49,7 +49,18 @@ declare namespace CadreManagement.Web.HyperMediaApi {
 	}
 }
 declare namespace CadreManagement.WebApi.Models {
-	interface Product extends CadreManagement.WebApi.Models.ViewModel<CadreManagement.WebApi.Models.Product> {
+	interface CadreResource {
+		resourceLinks: CadreManagement.WebApi.Models.CadreResource.Links;
+	}
+}
+declare namespace CadreManagement.WebApi.Models.CadreResource {
+	interface Links {
+		productHome: CadreManagement.Web.HyperMediaApi.Link<CadreManagement.WebApi.Models.Product.ProductHomeResource>;
+		self: CadreManagement.Web.HyperMediaApi.Link<CadreManagement.WebApi.Models.CadreResource>;
+	}
+}
+declare namespace CadreManagement.WebApi.Models.Product {
+	interface Product {
 		description: string;
 		imageUrl: string;
 		price: number;
@@ -59,7 +70,66 @@ declare namespace CadreManagement.WebApi.Models {
 		releaseDate: Date;
 		starRating: number;
 	}
-	interface ViewModel<T> {
+	interface ProductAddedCommand extends CadreManagement.Web.HyperMediaApi.HyperMediaCommand<CadreManagement.WebApi.Models.Product.ProductAddedResponse> {
+		productId: number;
+		productName: string;
+	}
+	interface ProductAddedResponse {
+		product: CadreManagement.WebApi.Models.Product.Product;
+		resourceLinks: CadreManagement.WebApi.Models.Product.ProductAddedResponse.Links;
+	}
+	interface ProductHomeResource {
+		resourceCommands: CadreManagement.WebApi.Models.Product.ProductHomeResource.Commands;
+		resourceLinks: CadreManagement.WebApi.Models.Product.ProductHomeResource.Links;
+	}
+	interface ProductRemovedCommand extends CadreManagement.Web.HyperMediaApi.HyperMediaCommand<CadreManagement.WebApi.Models.Product.ProductRemovedResponse> {
+		productId: number;
+	}
+	interface ProductRemovedResponse {
+		resourceLinks: CadreManagement.WebApi.Models.Product.ProductRemovedResponse.Links;
+		result: boolean;
+	}
+	interface ProductResource {
+		product: CadreManagement.WebApi.Models.Product.Product;
+		resourceLinks: CadreManagement.WebApi.Models.Product.ProductResource.Links;
+	}
+	interface ProductsResource {
+		products: CadreManagement.WebApi.Models.Product.Product[];
+		resourceLinks: CadreManagement.WebApi.Models.Product.ProductsResource.Links;
+	}
+}
+declare namespace CadreManagement.WebApi.Models.Product.ProductAddedResponse {
+	interface Links {
+		product: CadreManagement.Web.HyperMediaApi.Link<CadreManagement.WebApi.Models.Product.ProductResource>;
+	}
+}
+declare namespace CadreManagement.WebApi.Models.Product.ProductHomeResource {
+	interface Commands {
+		addedCommand: CadreManagement.WebApi.Models.Product.ProductAddedCommand;
+		removedCommand: CadreManagement.WebApi.Models.Product.ProductRemovedCommand;
+	}
+	interface Links {
+		product: CadreManagement.Web.HyperMediaApi.LinkTemplate1<CadreManagement.WebApi.Models.Product.ProductResource, number>;
+		products: CadreManagement.Web.HyperMediaApi.Link<CadreManagement.WebApi.Models.Product.ProductsResource>;
+		self: CadreManagement.Web.HyperMediaApi.Link<CadreManagement.WebApi.Models.Product.ProductHomeResource>;
+	}
+}
+declare namespace CadreManagement.WebApi.Models.Product.ProductRemovedResponse {
+	interface Links {
+		products: CadreManagement.Web.HyperMediaApi.Link<CadreManagement.WebApi.Models.Product.ProductsResource>;
+	}
+}
+declare namespace CadreManagement.WebApi.Models.Product.ProductResource {
+	interface Links {
+		self: CadreManagement.Web.HyperMediaApi.Link<CadreManagement.WebApi.Models.Product.ProductResource>;
+	}
+}
+declare namespace CadreManagement.WebApi.Models.Product.ProductsResource {
+	interface Links {
+		addProduct: CadreManagement.Web.HyperMediaApi.Link<CadreManagement.WebApi.Models.Product.ProductAddedResponse>;
+		product: CadreManagement.Web.HyperMediaApi.LinkTemplate1<CadreManagement.WebApi.Models.Product.ProductResource, number>;
+		removeProduct: CadreManagement.Web.HyperMediaApi.Link<CadreManagement.WebApi.Models.Product.ProductRemovedResponse>;
+		self: CadreManagement.Web.HyperMediaApi.Link<CadreManagement.WebApi.Models.Product.ProductsResource>;
 	}
 }
 

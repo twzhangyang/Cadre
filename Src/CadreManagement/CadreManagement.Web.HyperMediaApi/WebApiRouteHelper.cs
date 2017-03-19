@@ -7,9 +7,9 @@ namespace CadreManagement.Web.HyperMediaApi
 {
     public static class WebApiRouteHelper
     {
-        public static string RootUri { get { return RootUriTemplate.FormatWith(Protocol, HostName); } }    
+        public static string RootUri { get { return RootUriTemplate.FormatWith(Protocol, HostName); } }
         private static string HostName { get { return HttpContext.Current.Request.Url.Host; } }
-        private const string RootUriTemplate = "{0}://{1}/api";
+        private const string RootUriTemplate = "{0}://{1}/api";    
 
 
         private static string Protocol

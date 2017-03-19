@@ -2,13 +2,14 @@
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import {SharedModule} from './../shared'
+import { SharedModule } from './../shared'
 
 import { ProductListComponent } from './list/product-list.component';
 import { ProductDetailComponent } from './detail/product-detail.component';
 import { ProductListService } from './list/product-list.service';
 import { ProductDetailGuardService } from './detail/product-detail-guard.service';
-import {ProductFilterPipe} from './list/product-filter.pipe';
+import { ProductFilterPipe } from './list/product-filter.pipe';
+import { ProductListHyperMediaService } from './list/product-list.service.hypermedia';
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import {ProductFilterPipe} from './list/product-filter.pipe';
     ],
     providers: [
         ProductListService,
+        ProductListHyperMediaService,
         ProductDetailGuardService
     ]
 })
