@@ -6,6 +6,7 @@ using NUnit.Framework;
 
 namespace CadreManagement.DomainUnitTests.UserTests
 {
+    [TestFixture]
     public class UserRegisterPasswordTests : TestBase
     {
         [Test]

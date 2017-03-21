@@ -12,24 +12,17 @@ namespace CadreManagement.DomainUnitTests
 {
     public class TestingBootstrap
     {
-        private static IWindsorContainer _container;
-
-        public static IWindsorContainer CreateContainer()
+        public static void SetupContainer(IWindsorContainer container)
         {
-            if (_container == null)
-            {
-                _container = IocContainerCreator.Container;
-                UnitOfWorkRegistrar.Initialize(_container);
+            UnitOfWorkRegistrar.Initialize(container);
 
-                _container.ChangeComponentsLifestyleToScoped();
+            container.ChangeComponentsLifestyleToScoped();
 
-                _container.Install(FromAssembly.This());
-                _container.Install(FromAssembly.Containing<UowInstaller>());
-                _container.Install(FromAssembly.Containing<RepositoryContextInstaller>());
-                _container.Install(FromAssembly.Containing<ApplicationServiceInstaller>());
-            }
+            container.Install(FromAssembly.This());
+            container.Install(FromAssembly.Containing<UowInstaller>());
+            container.Install(FromAssembly.Containing<RepositoryContextInstaller>());
+            container.Install(FromAssembly.Containing<ApplicationServiceInstaller>());
 
-            return _container;
         }
     }
 }

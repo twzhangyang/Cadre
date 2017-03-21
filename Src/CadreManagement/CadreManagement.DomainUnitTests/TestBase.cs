@@ -19,8 +19,10 @@ namespace CadreManagement.DomainUnitTests
         [SetUp]
         public void CreateScope()
         {
-            Container = TestingBootstrap.CreateContainer();
+            Container=new Castle.Windsor.WindsorContainer();
+            TestingBootstrap.SetupContainer(Container);
             _scope = Container.BeginScope();
+
             Effort.Provider.EffortProviderConfiguration.RegisterProvider();
             Database.SetInitializer(new DropCreateDatabaseAlways<CadreManagementDbContext>());
         }
