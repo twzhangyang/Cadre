@@ -1,23 +1,32 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import Product=CadreManagement.WebApi.Models.Product;
+
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ProductHyperMediaService} from './../product.service.hypermedia';
 
 @Component({
     templateUrl: './product-detail.component.html'
 })
 export class ProductDetailComponent implements OnInit {
-    public pageTitle: string = 'Product Detail';
+     pageTitle: string = 'Product Detail';
+     productResource:Product.ProductResource;
 
-    constructor(private _route: ActivatedRoute,
-        private _router: Router) {
+    constructor(private route: ActivatedRoute,
+        private rotuer: Router,
+        private productHyperMediaService: ProductHyperMediaService) {
     }
 
-    public ngOnInit(): void {
-        let id = +this._route.snapshot.params['id'];
+     ngOnInit(): void {
+        let id = +this.route.snapshot.params['id'];
         this.pageTitle += `:${id}`;
-    }
 
-    public onBack(): void {
-        this._router.navigate(['/products']);
+        this.productHyperMediaService
+            .getProduct(id)
+            .subscribe(product=>this.productResource=product);
+     }
+
+     onBack(): void {
+        this.rotuer.navigate(['/products']);
     }
 
 }

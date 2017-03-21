@@ -225,7 +225,7 @@
     <Content Include="src\assets\img\angularclass-logo.png" />
     <Content Include="src\assets\robots.txt" />
     <Content Include="src\assets\service-worker.js" />
-    <TypeScriptCompile Include="src\app\product\list\product-list.service.hypermedia.ts" />
+    <TypeScriptCompile Include="src\app\product\product.service.hypermedia.ts" />
     <TypeScriptCompile Include="src\app\cadreApiNavigator.ts" />
     <Content Include="src\index.html" />
     <Content Include="src\meta\humans.txt" />
@@ -313,8 +313,6 @@
     <TypeScriptCompile Include="src\app\sidebar\sidebar.module.ts" />
     <TypeScriptCompile Include="src\custom-typings.d.ts" />
     <TypeScriptCompile Include="src\HyperMediaApi\ApiNavigator.ts" />
-    <TypeScriptCompile Include="src\HyperMediaApi\ApiNavigator1.ts" />
-    <TypeScriptCompile Include="src\HyperMediaApi\Hypermedia.ts" />
     <TypeScriptCompile Include="src\main.browser.aot.ts" />
     <TypeScriptCompile Include="src\main.browser.ts" />
     <TypeScriptCompile Include="src\polyfills.browser.ts" />

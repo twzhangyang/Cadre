@@ -1,5 +1,4 @@
 ﻿<div class='panel panel-primary'>
-    <div>{{products|json}}</div>
     <div class='panel-heading'>
         {{pageTitle}}
     </div>
@@ -58,6 +57,10 @@
                 </tr>
                 </tbody>
             </table>
+        </div>
+
+        <div class="row">
+            <a class="btn btn-default" (click)="onAdd()">Add</a> 
         </div>
     </div>
 </div>

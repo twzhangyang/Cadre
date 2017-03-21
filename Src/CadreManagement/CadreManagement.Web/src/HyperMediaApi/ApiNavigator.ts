@@ -1,5 +1,5 @@
 ﻿import HyperMediaApi = CadreManagement.Web.HyperMediaApi;
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { NextObserver } from 'rxjs/Observer';
@@ -44,17 +44,23 @@ export class SubLinkNavigator<TResource, TParentResource> {
                     this.http.get(myLink.uri)
                         .map((response: Response) => <TResource>response.json())
                         .do(data => console.log('All: ' + JSON.stringify(data)))
-                        .subscribe((data: TResource) => observer.next(data));
-                });
+                        .subscribe((data: TResource) => observer.next(data), this.handleError);
+                }, this.handleError);
         });
 
         return resource;
 
     };
+
+    private handleError(error: Response) {
+        console.error(error);
+        return Observable.throw(error.json().error || 'Server error');
+    }
 }
 
 export class LinkNavigator<TResource> {
 
+    private headers = new Headers({ 'Content-Type': 'application/json' });
     constructor(private http: Http, private rootLink: HyperMediaApi.Link<TResource>) { };
 
     followLink = <TTargetResource>(linkSelctor: (self: TResource) => HyperMediaApi.Link<TTargetResource>) => {
@@ -65,12 +71,19 @@ export class LinkNavigator<TResource> {
     execute = () => {
         var resource = this.http.get(this.rootLink.uri)
             .map((response: Response) => <TResource>response.json())
-            .do(data => console.log('All: ' + JSON.stringify(data)));
+            .do(data => console.log('All: ' + JSON.stringify(data)))
+            .catch(this.handleError);
         return resource;
     }
 
     postCommand = <TResponse>(command: HyperMediaApi.HyperMediaCommand<TResponse>) => {
-        return this.http.post(command.postUrl.uri, command)
-            .map((response: Response) => <TResponse>response.json());
+        return this.http.post(command.postUrl.uri, JSON.stringify(command), { headers: this.headers })
+            .map((response: Response) => <TResponse>response.json())
+            .catch(this.handleError);
+    }
+
+    private handleError(error: Response) {
+        console.error(error);
+        return Observable.throw(error.json().error || 'Server error');
     }
 }

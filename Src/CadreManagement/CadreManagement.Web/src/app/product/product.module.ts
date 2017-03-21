@@ -9,7 +9,7 @@ import { ProductDetailComponent } from './detail/product-detail.component';
 import { ProductListService } from './list/product-list.service';
 import { ProductDetailGuardService } from './detail/product-detail-guard.service';
 import { ProductFilterPipe } from './list/product-filter.pipe';
-import { ProductListHyperMediaService } from './list/product-list.service.hypermedia';
+import { ProductHyperMediaService } from './product.service.hypermedia';
 
 @NgModule({
     declarations: [
@@ -28,7 +28,7 @@ import { ProductListHyperMediaService } from './list/product-list.service.hyperm
     ],
     providers: [
         ProductListService,
-        ProductListHyperMediaService,
+        ProductHyperMediaService,
         ProductDetailGuardService
     ]
 })
