@@ -5,7 +5,6 @@ using NUnit.Framework;
 
 namespace CadreManagement.DomainUnitTests.UserTests
 {
-    [TestFixture]
     public class UserLoginTests : TestBase
     {
         [Test]
@@ -22,7 +21,7 @@ namespace CadreManagement.DomainUnitTests.UserTests
 
         }
 
-        [Test,Ignore("nothing")]
+        [Test]
         public void When_LoginWithWrongPassword_Should_ReturnFalse()
         {
             //Arrange

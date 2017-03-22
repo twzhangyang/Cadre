@@ -4,10 +4,8 @@ using NUnit.Framework;
 
 namespace CadreManagement.DomainUnitTests.UserTests
 {
-    [TestFixture]
     public class UserChangePasswordTests : TestBase
     {
-
         [Test]
         public void When_ChangePasswordWithValidValue_Should_ChangeSuccessfull()
         {

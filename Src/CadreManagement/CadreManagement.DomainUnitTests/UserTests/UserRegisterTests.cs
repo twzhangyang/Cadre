@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Data.Entity;
 using CadreManagement.ApplicationService.Exceptions;
 using CadreManagement.DomainUnitTests.UserTests.Scenarios;
 using CadreManagement.Model;
-using CadreManagement.Repository.EntityFramework;
 using FluentAssertions;
 using NUnit.Framework;
 
 namespace CadreManagement.DomainUnitTests.UserTests
 {
-    [TestFixture]
     public class UserRegisterTests : TestBase
     {
         [Test]
@@ -45,7 +42,7 @@ namespace CadreManagement.DomainUnitTests.UserTests
             user.Email.Should().Be(scenario.GivingModel.Email);
         }
 
-        [Test,Ignore("nothing")]
+        [Test]
         public void When_RegisterUserWithSameEmailTwice_Should_ThrowException()
         {
             //Arrange
