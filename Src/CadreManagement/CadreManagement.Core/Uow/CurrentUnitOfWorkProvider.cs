@@ -47,7 +47,8 @@ namespace CadreManagement.Core.Uow
             var unitOfWorkKey = CallContext.LogicalGetData(ContextKey) as string;
             if (unitOfWorkKey != null)
             {
-                throw new Exception("Don't set unitOfWork once agin");
+                ExitFromCurrentUowScope();
+               // throw new Exception("Don't set unitOfWork once agin");
             }
             UnitOfWorkDictionary.TryAdd(unitOfWork.Id, unitOfWork);
             CallContext.LogicalSetData(ContextKey, unitOfWork.Id);

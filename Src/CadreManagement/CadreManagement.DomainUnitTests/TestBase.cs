@@ -20,9 +20,9 @@ namespace CadreManagement.DomainUnitTests
         public void CreateScope()
         {
             Container = TestingBootstrap.CreateContainer();
+            //Effort.Provider.EffortProviderConfiguration.RegisterProvider();
+            //Database.SetInitializer(new DropCreateDatabaseAlways<CadreManagementDbContext>());
             _scope = Container.BeginScope();
-            Effort.Provider.EffortProviderConfiguration.RegisterProvider();
-            Database.SetInitializer(new DropCreateDatabaseAlways<CadreManagementDbContext>());
         }
 
         [TearDown]

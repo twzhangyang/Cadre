@@ -6,15 +6,6 @@ using Castle.Windsor;
 
 namespace CadreManagement.ApplicationService.UowHelper
 {
-    ///Richie:this desgin come from Apb
-    /// 
-    /// 
-    /// 
-    /// 
-    /// 
-    /// <summary>
-    /// This class is used to register interceptor for needed classes for Unit Of Work mechanism.
-    /// </summary>
     public static class UnitOfWorkRegistrar
     {
         /// <summary>

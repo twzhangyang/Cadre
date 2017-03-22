@@ -27,7 +27,6 @@ namespace CadreManagement.DomainUnitTests.UserTests
             scenario.Invoking(s => s.Execute()).ShouldThrow<Exception>("invalid username");
         }
 
-
         [Test]
         public void When_RegisterUserWithValidData_Should_CreateUser()
         {
@@ -37,6 +36,7 @@ namespace CadreManagement.DomainUnitTests.UserTests
             //Act
             scenario.Execute();
 
+            //Assert
             var user = UserService.GetUser(scenario.Id);
             user.Name.Should().Be(scenario.GivingModel.Name);
             user.Email.Should().Be(scenario.GivingModel.Email);
