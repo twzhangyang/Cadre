@@ -3,3 +3,4 @@ obj
 Src/CadreManagement/.vs/CadreManagement/v14/.suo
 packages
 node_modules
+dist

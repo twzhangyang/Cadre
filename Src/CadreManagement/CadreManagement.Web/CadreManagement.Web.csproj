@@ -5,20 +5,19 @@
   <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{681DFA7F-1E89-4B0B-96CE-141DDF786FBB}</ProjectGuid>
+    <ProjectGuid>{6C38D1B4-AA5E-483C-A83B-3C95D4B0B10F}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CadreManagement.Web</RootNamespace>
     <AssemblyName>CadreManagement.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>false</UseIISExpress>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -27,6 +26,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.2</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -71,7 +71,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -79,6 +79,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -86,16 +87,14 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="TypeLite, Version=1.8.2.0, Culture=neutral, PublicKeyToken=8cd4b9c9ac23d744, processorArchitecture=MSIL">
       <HintPath>..\packages\TypeLite.1.8.4\lib\net4\TypeLite.dll</HintPath>
       <Private>True</Private>
@@ -120,52 +119,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scripts\TypeScriptGenerationConfig.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="config\empty.js" />
-    <Content Include="config\github-deploy\index.js" />
-    <Content Include="config\head-config.common.js" />
-    <Content Include="config\helpers.js" />
-    <Content Include="config\html-elements-plugin\index.js" />
-    <Content Include="config\karma.conf.js" />
-    <Content Include="config\protractor.conf.js" />
-    <Content Include="config\resource-override.js" />
-    <Content Include="config\spec-bundle.js" />
-    <Content Include="config\webpack.common.js" />
-    <Content Include="config\webpack.dev.js" />
-    <Content Include="config\webpack.github-deploy.js" />
-    <Content Include="config\webpack.prod.js" />
-    <Content Include="config\webpack.test.js" />
+    <Content Include="Global.asax" />
     <Content Include="karma.conf.js" />
-    <Content Include="node_modules\bootstrap\dist\css\bootstrap-theme.css" />
-    <Content Include="node_modules\bootstrap\dist\css\bootstrap-theme.min.css" />
-    <Content Include="node_modules\bootstrap\dist\css\bootstrap.css" />
-    <Content Include="node_modules\bootstrap\dist\css\bootstrap.min.css" />
-    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="node_modules\bootstrap\dist\js\bootstrap.js" />
-    <Content Include="node_modules\bootstrap\dist\js\bootstrap.min.js" />
-    <Content Include="node_modules\bootstrap\dist\js\npm.js" />
-    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="node_modules\bootstrap\Gruntfile.js" />
-    <Content Include="node_modules\bootstrap\grunt\bs-commonjs-generator.js" />
-    <Content Include="node_modules\bootstrap\grunt\bs-glyphicons-data-generator.js" />
-    <Content Include="node_modules\bootstrap\grunt\bs-lessdoc-parser.js" />
-    <Content Include="node_modules\bootstrap\grunt\bs-raw-files-generator.js" />
-    <Content Include="node_modules\bootstrap\grunt\change-version.js" />
-    <Content Include="node_modules\bootstrap\js\affix.js" />
-    <Content Include="node_modules\bootstrap\js\alert.js" />
-    <Content Include="node_modules\bootstrap\js\button.js" />
-    <Content Include="node_modules\bootstrap\js\carousel.js" />
-    <Content Include="node_modules\bootstrap\js\collapse.js" />
-    <Content Include="node_modules\bootstrap\js\dropdown.js" />
-    <Content Include="node_modules\bootstrap\js\modal.js" />
-    <Content Include="node_modules\bootstrap\js\popover.js" />
-    <Content Include="node_modules\bootstrap\js\scrollspy.js" />
-    <Content Include="node_modules\bootstrap\js\tab.js" />
-    <Content Include="node_modules\bootstrap\js\tooltip.js" />
-    <Content Include="node_modules\bootstrap\js\transition.js" />
     <Content Include="protractor.conf.js" />
     <Content Include="Scripts\TypeLite.Net4.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -175,16 +130,12 @@
     <Content Include="src\app\app.component.html" />
     <Content Include="src\app\dashboard\dashboard.component.html" />
     <Content Include="src\app\dashboard\home\home.component.html" />
-    <Content Include="src\app\dashboard\icons\icons.component.html" />
     <Content Include="src\app\dashboard\maps\maps.component.html" />
     <Content Include="src\app\dashboard\notifications\notifications.component.html" />
     <Content Include="src\app\dashboard\table\table.component.html" />
     <Content Include="src\app\dashboard\typography\typography.component.html" />
     <Content Include="src\app\dashboard\upgrade\upgrade.component.html" />
     <Content Include="src\app\dashboard\user\user.component.html" />
-    <Content Include="src\app\hello\hello.component.html" />
-    <Content Include="src\app\home\home.component.css" />
-    <Content Include="src\app\home\home.component.html" />
     <Content Include="src\app\product\detail\product-detail.component.html" />
     <Content Include="src\app\product\list\product-list.component.css" />
     <Content Include="src\app\product\list\product-list.component.html" />
@@ -193,46 +144,38 @@
     <Content Include="src\app\shared\star\star.component.css" />
     <Content Include="src\app\shared\star\star.component.html" />
     <Content Include="src\app\sidebar\sidebar.component.html" />
-    <Content Include="src\assets\humans.txt" />
-    <Content Include="src\assets\icon\android-icon-144x144.png" />
-    <Content Include="src\assets\icon\android-icon-192x192.png" />
-    <Content Include="src\assets\icon\android-icon-36x36.png" />
-    <Content Include="src\assets\icon\android-icon-48x48.png" />
-    <Content Include="src\assets\icon\android-icon-72x72.png" />
-    <Content Include="src\assets\icon\android-icon-96x96.png" />
-    <Content Include="src\assets\icon\apple-icon-114x114.png" />
-    <Content Include="src\assets\icon\apple-icon-120x120.png" />
-    <Content Include="src\assets\icon\apple-icon-144x144.png" />
-    <Content Include="src\assets\icon\apple-icon-152x152.png" />
-    <Content Include="src\assets\icon\apple-icon-180x180.png" />
-    <Content Include="src\assets\icon\apple-icon-57x57.png" />
-    <Content Include="src\assets\icon\apple-icon-60x60.png" />
-    <Content Include="src\assets\icon\apple-icon-72x72.png" />
-    <Content Include="src\assets\icon\apple-icon-76x76.png" />
-    <Content Include="src\assets\icon\apple-icon-precomposed.png" />
-    <Content Include="src\assets\icon\apple-icon.png" />
-    <Content Include="src\assets\icon\browserconfig.xml" />
-    <Content Include="src\assets\icon\favicon-16x16.png" />
-    <Content Include="src\assets\icon\favicon-32x32.png" />
-    <Content Include="src\assets\icon\favicon-96x96.png" />
-    <Content Include="src\assets\icon\favicon.ico" />
-    <Content Include="src\assets\icon\ms-icon-144x144.png" />
-    <Content Include="src\assets\icon\ms-icon-150x150.png" />
-    <Content Include="src\assets\icon\ms-icon-310x310.png" />
-    <Content Include="src\assets\icon\ms-icon-70x70.png" />
-    <Content Include="src\assets\img\angular-logo.png" />
-    <Content Include="src\assets\img\angularclass-avatar.png" />
-    <Content Include="src\assets\img\angularclass-logo.png" />
-    <Content Include="src\assets\robots.txt" />
-    <Content Include="src\assets\service-worker.js" />
-    <TypeScriptCompile Include="src\app\product\product.service.hypermedia.ts" />
-    <TypeScriptCompile Include="src\app\cadreApiNavigator.ts" />
+    <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
-    <Content Include="src\meta\humans.txt" />
-    <Content Include="src\meta\robots.txt" />
+    <Content Include="src\styles.css" />
     <Content Include="src\styles\light-bootstrap-dashboard.css" />
     <Content Include="src\styles\styles.css" />
-    <Content Include="webpack.config.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\TypeScriptGenerationConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include=".editorconfig" />
+    <Content Include="angular-cli.json" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="tslint.json" />
+    <Content Include="src\assets\.gitkeep" />
+    <Content Include="tsconfig.json" />
+    <Content Include="Scripts\Manager.ttinclude" />
+    <Content Include="src\styles\styles.scss" />
+    <Content Include="src\styles\_variables.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\Enums.ts">
@@ -243,66 +186,33 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TypeLite.Net4.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="src\app\+barrel\+child-barrel\child-barrel.component.ts" />
-    <TypeScriptCompile Include="src\app\+barrel\+child-barrel\child-barrel.module.ts" />
-    <TypeScriptCompile Include="src\app\+barrel\+child-barrel\child-barrel.routes.ts" />
-    <TypeScriptCompile Include="src\app\+barrel\+child-barrel\index.ts" />
-    <TypeScriptCompile Include="src\app\+barrel\barrel.component.ts" />
-    <TypeScriptCompile Include="src\app\+barrel\barrel.module.ts" />
-    <TypeScriptCompile Include="src\app\+barrel\barrel.routes.ts" />
-    <TypeScriptCompile Include="src\app\+barrel\index.ts" />
-    <TypeScriptCompile Include="src\app\+detail\+child-detail\child-detail.component.ts" />
-    <TypeScriptCompile Include="src\app\+detail\+child-detail\child-detail.module.ts" />
-    <TypeScriptCompile Include="src\app\+detail\+child-detail\child-detail.routes.ts" />
-    <TypeScriptCompile Include="src\app\+detail\+child-detail\index.ts" />
-    <TypeScriptCompile Include="src\app\+detail\detail.component.ts" />
-    <TypeScriptCompile Include="src\app\+detail\detail.module.ts" />
-    <TypeScriptCompile Include="src\app\+detail\detail.routes.ts" />
-    <TypeScriptCompile Include="src\app\+detail\index.ts" />
-    <TypeScriptCompile Include="src\app\about\about.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\about\about.component.ts" />
-    <TypeScriptCompile Include="src\app\about\index.ts" />
+    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
-    <TypeScriptCompile Include="src\app\app.resolver.ts" />
     <TypeScriptCompile Include="src\app\app.routes.ts" />
-    <TypeScriptCompile Include="src\app\app.service.ts" />
+    <TypeScriptCompile Include="src\app\cadreApiNavigator.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard.module.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard.routes.ts" />
     <TypeScriptCompile Include="src\app\dashboard\home\home.component.ts" />
-    <TypeScriptCompile Include="src\app\dashboard\icons\icons.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\maps\maps.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\notifications\notifications.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\table\table.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\typography\typography.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\upgrade\upgrade.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\user\user.component.ts" />
-    <TypeScriptCompile Include="src\app\environment.ts" />
-    <TypeScriptCompile Include="src\app\hello\hello.component.ts" />
-    <TypeScriptCompile Include="src\app\hello\index.ts" />
-    <TypeScriptCompile Include="src\app\home\home.component.spec.ts" />
-    <TypeScriptCompile Include="src\app\home\home.component.ts" />
-    <TypeScriptCompile Include="src\app\home\home.e2e.ts" />
-    <TypeScriptCompile Include="src\app\home\index.ts" />
-    <TypeScriptCompile Include="src\app\home\title\index.ts" />
-    <TypeScriptCompile Include="src\app\home\title\title.service.spec.ts" />
-    <TypeScriptCompile Include="src\app\home\title\title.service.ts" />
-    <TypeScriptCompile Include="src\app\home\x-large\index.ts" />
-    <TypeScriptCompile Include="src\app\home\x-large\x-large.directive.spec.ts" />
-    <TypeScriptCompile Include="src\app\home\x-large\x-large.directive.ts" />
-    <TypeScriptCompile Include="src\app\index.ts" />
+    <TypeScriptCompile Include="src\app\hyper-media-api\apiNavigator.ts" />
     <TypeScriptCompile Include="src\app\no-content\index.ts" />
     <TypeScriptCompile Include="src\app\no-content\no-content.component.ts" />
-    <TypeScriptCompile Include="src\app\product\index.ts" />
     <TypeScriptCompile Include="src\app\product\detail\product-detail-guard.service.ts" />
     <TypeScriptCompile Include="src\app\product\detail\product-detail.component.ts" />
     <TypeScriptCompile Include="src\app\product\list\product-filter.pipe.ts" />
-    <TypeScriptCompile Include="src\app\product\product.module.ts" />
+    <TypeScriptCompile Include="src\app\product\list\product-list.component.ts" />
     <TypeScriptCompile Include="src\app\product\list\product-list.service.ts" />
+    <TypeScriptCompile Include="src\app\product\product.module.ts" />
+    <TypeScriptCompile Include="src\app\product\product.service.hypermedia.ts" />
     <TypeScriptCompile Include="src\app\shared\footer\footer.component.ts" />
     <TypeScriptCompile Include="src\app\shared\footer\footer.module.ts" />
-    <TypeScriptCompile Include="src\app\shared\index.ts" />
     <TypeScriptCompile Include="src\app\shared\navbar\navbar.component.ts" />
     <TypeScriptCompile Include="src\app\shared\navbar\navbar.module.ts" />
     <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
@@ -311,139 +221,18 @@
     <TypeScriptCompile Include="src\app\sidebar\sidebar.component.ts" />
     <TypeScriptCompile Include="src\app\sidebar\sidebar.metadata.ts" />
     <TypeScriptCompile Include="src\app\sidebar\sidebar.module.ts" />
-    <TypeScriptCompile Include="src\custom-typings.d.ts" />
-    <TypeScriptCompile Include="src\HyperMediaApi\ApiNavigator.ts" />
-    <TypeScriptCompile Include="src\main.browser.aot.ts" />
-    <TypeScriptCompile Include="src\main.browser.ts" />
-    <TypeScriptCompile Include="src\polyfills.browser.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="src\assets\css\.gitkeep" />
-    <Content Include="src\assets\data.json" />
-    <Content Include="src\assets\manifest.json" />
-    <Content Include="src\assets\mock-data\mock-data.json" />
-    <Content Include="src\styles\styles.scss" />
-    <Content Include="src\styles\_variables.scss" />
+    <TypeScriptCompile Include="src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="src\environments\environment.ts" />
+    <TypeScriptCompile Include="src\main.ts" />
+    <TypeScriptCompile Include="src\polyfills.ts" />
+    <TypeScriptCompile Include="src\test.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Dockerfile" />
-    <Content Include="firebase.json" />
-    <Content Include="netlify.toml" />
-    <Content Include="package.json" />
-    <Content Include="README.md" />
-    <Content Include="tsconfig.json" />
-    <Content Include="tsconfig.webpack.json" />
-    <Content Include="tslint.json" />
-    <Content Include="typedoc.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="node_modules\bootstrap\CHANGELOG.md" />
-    <Content Include="node_modules\bootstrap\dist\css\bootstrap-theme.css.map" />
-    <Content Include="node_modules\bootstrap\dist\css\bootstrap-theme.min.css.map" />
-    <Content Include="node_modules\bootstrap\dist\css\bootstrap.css.map" />
-    <Content Include="node_modules\bootstrap\dist\css\bootstrap.min.css.map" />
-    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="node_modules\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="node_modules\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="node_modules\bootstrap\grunt\.jshintrc" />
-    <Content Include="node_modules\bootstrap\grunt\configBridge.json" />
-    <Content Include="node_modules\bootstrap\grunt\npm-shrinkwrap.json" />
-    <Content Include="node_modules\bootstrap\grunt\sauce_browsers.yml" />
-    <Content Include="node_modules\bootstrap\less\alerts.less" />
-    <Content Include="node_modules\bootstrap\less\badges.less" />
-    <Content Include="node_modules\bootstrap\less\bootstrap.less" />
-    <Content Include="node_modules\bootstrap\less\breadcrumbs.less" />
-    <Content Include="node_modules\bootstrap\less\button-groups.less" />
-    <Content Include="node_modules\bootstrap\less\buttons.less" />
-    <Content Include="node_modules\bootstrap\less\carousel.less" />
-    <Content Include="node_modules\bootstrap\less\close.less" />
-    <Content Include="node_modules\bootstrap\less\code.less" />
-    <Content Include="node_modules\bootstrap\less\component-animations.less" />
-    <Content Include="node_modules\bootstrap\less\dropdowns.less" />
-    <Content Include="node_modules\bootstrap\less\forms.less" />
-    <Content Include="node_modules\bootstrap\less\glyphicons.less" />
-    <Content Include="node_modules\bootstrap\less\grid.less" />
-    <Content Include="node_modules\bootstrap\less\input-groups.less" />
-    <Content Include="node_modules\bootstrap\less\jumbotron.less" />
-    <Content Include="node_modules\bootstrap\less\labels.less" />
-    <Content Include="node_modules\bootstrap\less\list-group.less" />
-    <Content Include="node_modules\bootstrap\less\media.less" />
-    <Content Include="node_modules\bootstrap\less\mixins.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\alerts.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\background-variant.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\border-radius.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\buttons.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\center-block.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\clearfix.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\forms.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\gradients.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\grid-framework.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\grid.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\hide-text.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\image.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\labels.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\list-group.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\nav-divider.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\nav-vertical-align.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\opacity.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\pagination.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\panels.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\progress-bar.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\reset-filter.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\reset-text.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\resize.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\responsive-visibility.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\size.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\tab-focus.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\table-row.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\text-emphasis.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\text-overflow.less" />
-    <Content Include="node_modules\bootstrap\less\mixins\vendor-prefixes.less" />
-    <Content Include="node_modules\bootstrap\less\modals.less" />
-    <Content Include="node_modules\bootstrap\less\navbar.less" />
-    <Content Include="node_modules\bootstrap\less\navs.less" />
-    <Content Include="node_modules\bootstrap\less\normalize.less" />
-    <Content Include="node_modules\bootstrap\less\pager.less" />
-    <Content Include="node_modules\bootstrap\less\pagination.less" />
-    <Content Include="node_modules\bootstrap\less\panels.less" />
-    <Content Include="node_modules\bootstrap\less\popovers.less" />
-    <Content Include="node_modules\bootstrap\less\print.less" />
-    <Content Include="node_modules\bootstrap\less\progress-bars.less" />
-    <Content Include="node_modules\bootstrap\less\responsive-embed.less" />
-    <Content Include="node_modules\bootstrap\less\responsive-utilities.less" />
-    <Content Include="node_modules\bootstrap\less\scaffolding.less" />
-    <Content Include="node_modules\bootstrap\less\tables.less" />
-    <Content Include="node_modules\bootstrap\less\theme.less" />
-    <Content Include="node_modules\bootstrap\less\thumbnails.less" />
-    <Content Include="node_modules\bootstrap\less\tooltip.less" />
-    <Content Include="node_modules\bootstrap\less\type.less" />
-    <Content Include="node_modules\bootstrap\less\utilities.less" />
-    <Content Include="node_modules\bootstrap\less\variables.less" />
-    <Content Include="node_modules\bootstrap\less\wells.less" />
-    <Content Include="node_modules\bootstrap\LICENSE" />
-    <Content Include="node_modules\bootstrap\package.json" />
-    <Content Include="node_modules\bootstrap\README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="src\app\product\list\product-list.component.ts" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="src\assets\mock-data\products\products.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\Manager.ttinclude" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="packages.config" />
+    <Folder Include="src\app\dashboard\icons\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CadreManagement.Web.HyperMediaApi\CadreManagement.Web.HyperMediaApi.csproj">
@@ -455,18 +244,6 @@
       <Name>CadreManagement.WebApi</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -481,9 +258,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55070</DevelopmentServerPort>
+          <DevelopmentServerPort>32501</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://cadre.local.com</IISUrl>
+          <IISUrl>http://localhost:32501/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

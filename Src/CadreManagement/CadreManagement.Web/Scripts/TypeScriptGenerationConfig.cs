@@ -1,6 +1,6 @@
 ﻿using System;
+using CadreManagement.Web.HyperMediaApi;
 using CadreManagement.WebApi;
-using CadreManagement.WebApi.Models;
 using TypeLite;
 using TypeLite.Net4;
 
@@ -15,7 +15,7 @@ namespace CadreManagement.Web.Scripts
                 .WithMemberFormatter((identifier) =>
                         Char.ToLower(identifier.Name[0]) + identifier.Name.Substring(1))
                 .For(typeof(CadreApiNavigator).Assembly)
-                .For(typeof(CadreManagement.Web.HyperMediaApi.HyperMediaCommand<>).Assembly);
+                .For(typeof(HyperMediaCommand<>).Assembly);
         }
     }
 }
