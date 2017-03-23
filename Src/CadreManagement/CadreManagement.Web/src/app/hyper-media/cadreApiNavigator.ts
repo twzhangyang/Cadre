@@ -1,7 +1,8 @@
-﻿import { LinkNavigator } from './hyper-media-api/apiNavigator';
+﻿import { LinkNavigator } from './apiNavigator';
 import { Http, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
 import CadreResource = CadreManagement.WebApi.Models.CadreResource;
+
 
 @Injectable()
 export class CadreApiNavigator extends LinkNavigator<CadreResource> {

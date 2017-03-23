@@ -7,17 +7,13 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { NoContentComponent } from './no-content';
-import { CadreApiNavigator } from './cadreApiNavigator';
 
-import '../styles/styles.scss';
-import '../styles/styles.css';
-import '../styles/light-bootstrap-dashboard.css';
-
+import { ApiNavigatorModule } from './hyper-media/apiNavigator.module';
 import { SidebarModule } from './sidebar/sidebar.module';
 import { FooterModule } from './shared/footer/footer.module';
 import { NavbarModule } from './shared/navbar/navbar.module';
 import { DashboardModule } from './dashboard/dashboard.module';
-import {ProductModule} from './product/product.module';
+import { ProductModule } from './product/product.module';
 
 
 
@@ -31,6 +27,7 @@ import {ProductModule} from './product/product.module';
         FormsModule,
         HttpModule,
         RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+        ApiNavigatorModule,
         SidebarModule,
         FooterModule,
         NavbarModule,
@@ -39,7 +36,6 @@ import {ProductModule} from './product/product.module';
     ],
     providers: [
         { provide: 'api', useValue: 'http//localhost/api/user' }, //test
-        CadreApiNavigator
     ],
     bootstrap: [AppComponent]
 })

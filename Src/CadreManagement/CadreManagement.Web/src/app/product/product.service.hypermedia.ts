@@ -4,7 +4,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { CadreApiNavigator } from './../cadreApiNavigator';
+import { CadreApiNavigator } from './../hyper-media/cadreApiNavigator';
 import Link = CadreManagement.Web.HyperMediaApi.Link;
 
 @Injectable()

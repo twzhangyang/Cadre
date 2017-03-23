@@ -190,7 +190,7 @@
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\app.routes.ts" />
-    <TypeScriptCompile Include="src\app\cadreApiNavigator.ts" />
+    <TypeScriptCompile Include="src\app\hyper-media\cadreApiNavigator.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard.module.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard.routes.ts" />
@@ -201,7 +201,8 @@
     <TypeScriptCompile Include="src\app\dashboard\typography\typography.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\upgrade\upgrade.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\user\user.component.ts" />
-    <TypeScriptCompile Include="src\app\hyper-media-api\apiNavigator.ts" />
+    <TypeScriptCompile Include="src\app\hyper-media\apiNavigator.module.ts" />
+    <TypeScriptCompile Include="src\app\hyper-media\apiNavigator.ts" />
     <TypeScriptCompile Include="src\app\no-content\index.ts" />
     <TypeScriptCompile Include="src\app\no-content\no-content.component.ts" />
     <TypeScriptCompile Include="src\app\product\detail\product-detail-guard.service.ts" />

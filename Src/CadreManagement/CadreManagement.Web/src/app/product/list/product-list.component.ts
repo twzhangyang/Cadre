@@ -3,7 +3,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductListService } from './product-list.service';
 import { ProductHyperMediaService } from './../product.service.hypermedia';
-import { CadreApiNavigator } from './../../cadreApiNavigator';
+import { CadreApiNavigator } from './../../hyper-media/cadreApiNavigator';
 
 @Component({
     templateUrl: './product-list.component.html',
