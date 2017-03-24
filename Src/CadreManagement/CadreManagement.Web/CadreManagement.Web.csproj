@@ -136,6 +136,11 @@
     <Content Include="src\app\dashboard\typography\typography.component.html" />
     <Content Include="src\app\dashboard\upgrade\upgrade.component.html" />
     <Content Include="src\app\dashboard\user\user.component.html" />
+    <Content Include="src\app\material\card\material-card.component.html" />
+    <Content Include="src\app\material\chip\material-chip.component.html" />
+    <Content Include="src\app\material\dialog\material-dialog-result.component.html" />
+    <Content Include="src\app\material\dialog\material-dialog.component.html" />
+    <Content Include="src\app\material\material-demo.component.html" />
     <Content Include="src\app\product\detail\product-detail.component.html" />
     <Content Include="src\app\product\list\product-list.component.css" />
     <Content Include="src\app\product\list\product-list.component.html" />
@@ -203,6 +208,11 @@
     <TypeScriptCompile Include="src\app\dashboard\user\user.component.ts" />
     <TypeScriptCompile Include="src\app\hyper-media\apiNavigator.module.ts" />
     <TypeScriptCompile Include="src\app\hyper-media\apiNavigator.ts" />
+    <TypeScriptCompile Include="src\app\material\card\material-card.component.ts" />
+    <TypeScriptCompile Include="src\app\material\chip\material-chip.component.ts" />
+    <TypeScriptCompile Include="src\app\material\dialog\material-dialog.component.ts" />
+    <TypeScriptCompile Include="src\app\material\material-demo.component.ts" />
+    <TypeScriptCompile Include="src\app\material\material-demo.module.ts" />
     <TypeScriptCompile Include="src\app\no-content\index.ts" />
     <TypeScriptCompile Include="src\app\no-content\no-content.component.ts" />
     <TypeScriptCompile Include="src\app\product\detail\product-detail-guard.service.ts" />
