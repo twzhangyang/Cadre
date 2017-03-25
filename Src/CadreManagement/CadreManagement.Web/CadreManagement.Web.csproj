@@ -126,17 +126,19 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>TypeLite.Net4.d.ts</LastGenOutput>
     </Content>
-    <Content Include="src\app\app.component.css" />
     <Content Include="src\app\app.component.html" />
     <Content Include="src\app\covalent\covalent-demo.component.html" />
+    <Content Include="src\app\dashboard-product\dashboard-product.component.html" />
+    <Content Include="src\app\dashboard-product\features\features.component.html" />
+    <Content Include="src\app\dashboard-product\features\form\form.component.html" />
+    <Content Include="src\app\dashboard-product\overview\overview.component.html" />
+    <Content Include="src\app\dashboard-product\stats\stats.component.html" />
     <Content Include="src\app\dashboard\dashboard.component.html" />
-    <Content Include="src\app\dashboard\home\home.component.html" />
-    <Content Include="src\app\dashboard\maps\maps.component.html" />
-    <Content Include="src\app\dashboard\notifications\notifications.component.html" />
-    <Content Include="src\app\dashboard\table\table.component.html" />
-    <Content Include="src\app\dashboard\typography\typography.component.html" />
-    <Content Include="src\app\dashboard\upgrade\upgrade.component.html" />
-    <Content Include="src\app\dashboard\user\user.component.html" />
+    <Content Include="src\app\detail\detail.component.html" />
+    <Content Include="src\app\form\form.component.html" />
+    <Content Include="src\app\login\login.component.html" />
+    <Content Include="src\app\logs\logs.component.html" />
+    <Content Include="src\app\main\main.component.html" />
     <Content Include="src\app\material\card\material-card.component.html" />
     <Content Include="src\app\material\chip\material-chip.component.html" />
     <Content Include="src\app\material\dialog\material-dialog-result.component.html" />
@@ -149,7 +151,12 @@
     <Content Include="src\app\shared\navbar\navbar.component.html" />
     <Content Include="src\app\shared\star\star.component.css" />
     <Content Include="src\app\shared\star\star.component.html" />
-    <Content Include="src\app\sidebar\sidebar.component.html" />
+    <Content Include="src\app\templates\dashboard\dashboard.component.html" />
+    <Content Include="src\app\templates\editor\editor.component.html" />
+    <Content Include="src\app\templates\email\email.component.html" />
+    <Content Include="src\app\templates\templates.component.html" />
+    <Content Include="src\app\users\form\form.component.html" />
+    <Content Include="src\app\users\users.component.html" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
     <Content Include="src\styles.css" />
@@ -171,11 +178,35 @@
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="tslint.json" />
-    <Content Include="src\assets\.gitkeep" />
     <Content Include="tsconfig.json" />
     <Content Include="Scripts\Manager.ttinclude" />
     <Content Include="src\styles\styles.scss" />
     <Content Include="src\styles\_variables.scss" />
+    <Content Include="src\app\dashboard\dashboard.component.scss" />
+    <Content Include="src\data\alerts.json" />
+    <Content Include="src\data\data.csv" />
+    <Content Include="src\data\data.json" />
+    <Content Include="src\data\data.tsv" />
+    <Content Include="src\data\datatime.csv" />
+    <Content Include="src\data\features.json" />
+    <Content Include="src\data\items.json" />
+    <Content Include="src\data\products.json" />
+    <Content Include="src\data\users.json" />
+    <Content Include="src\app\dashboard-product\dashboard-product.component.scss" />
+    <Content Include="src\app\dashboard-product\features\features.component.scss" />
+    <Content Include="src\app\dashboard-product\features\form\form.component.scss" />
+    <Content Include="src\app\dashboard-product\overview\overview.component.scss" />
+    <Content Include="src\app\dashboard-product\stats\stats.component.scss" />
+    <Content Include="src\app\detail\detail.component.scss" />
+    <Content Include="src\app\form\form.component.scss" />
+    <Content Include="src\app\login\login.component.scss" />
+    <Content Include="src\app\logs\logs.component.scss" />
+    <Content Include="src\app\templates\dashboard\dashboard.component.scss" />
+    <Content Include="src\app\templates\editor\editor.component.scss" />
+    <Content Include="src\app\templates\email\email.component.scss" />
+    <Content Include="src\app\templates\templates.component.scss" />
+    <Content Include="src\app\users\form\form.component.scss" />
+    <Content Include="src\app\users\users.component.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -192,25 +223,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TypeLite.Net4.tt</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\app.routes.ts" />
     <TypeScriptCompile Include="src\app\covalent\covalent-demo.component.ts" />
     <TypeScriptCompile Include="src\app\covalent\covalent-demo.module.ts" />
-    <TypeScriptCompile Include="src\app\hyper-media\cadreApiNavigator.ts" />
+    <TypeScriptCompile Include="src\app\dashboard-product\dashboard-product.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\dashboard-product\dashboard-product.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard-product\features\features.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard-product\features\form\form.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard-product\overview\data.ts" />
+    <TypeScriptCompile Include="src\app\dashboard-product\overview\overview.component.spec.ts" />
+    <TypeScriptCompile Include="src\app\dashboard-product\overview\overview.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard-product\stats\data.ts" />
+    <TypeScriptCompile Include="src\app\dashboard-product\stats\stats.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard.component.ts" />
-    <TypeScriptCompile Include="src\app\dashboard\dashboard.module.ts" />
-    <TypeScriptCompile Include="src\app\dashboard\dashboard.routes.ts" />
-    <TypeScriptCompile Include="src\app\dashboard\home\home.component.ts" />
-    <TypeScriptCompile Include="src\app\dashboard\maps\maps.component.ts" />
-    <TypeScriptCompile Include="src\app\dashboard\notifications\notifications.component.ts" />
-    <TypeScriptCompile Include="src\app\dashboard\table\table.component.ts" />
-    <TypeScriptCompile Include="src\app\dashboard\typography\typography.component.ts" />
-    <TypeScriptCompile Include="src\app\dashboard\upgrade\upgrade.component.ts" />
-    <TypeScriptCompile Include="src\app\dashboard\user\user.component.ts" />
+    <TypeScriptCompile Include="src\app\dashboard\data.ts" />
+    <TypeScriptCompile Include="src\app\detail\detail.component.ts" />
+    <TypeScriptCompile Include="src\app\form\form.component.ts" />
+    <TypeScriptCompile Include="src\app\hyper-media\cadreApiNavigator.ts" />
     <TypeScriptCompile Include="src\app\hyper-media\apiNavigator.module.ts" />
     <TypeScriptCompile Include="src\app\hyper-media\apiNavigator.ts" />
+    <TypeScriptCompile Include="src\app\login\login.component.ts" />
+    <TypeScriptCompile Include="src\app\logs\logs.component.ts" />
+    <TypeScriptCompile Include="src\app\main\main.component.ts" />
     <TypeScriptCompile Include="src\app\material\card\material-card.component.ts" />
     <TypeScriptCompile Include="src\app\material\chip\material-chip.component.ts" />
     <TypeScriptCompile Include="src\app\material\dialog\material-dialog.component.ts" />
@@ -231,14 +267,26 @@
     <TypeScriptCompile Include="src\app\shared\navbar\navbar.module.ts" />
     <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
     <TypeScriptCompile Include="src\app\shared\star\star.component.ts" />
-    <TypeScriptCompile Include="src\app\sidebar\sidebar-routes.config.ts" />
-    <TypeScriptCompile Include="src\app\sidebar\sidebar.component.ts" />
-    <TypeScriptCompile Include="src\app\sidebar\sidebar.metadata.ts" />
-    <TypeScriptCompile Include="src\app\sidebar\sidebar.module.ts" />
+    <TypeScriptCompile Include="src\app\templates\dashboard\dashboard.component.ts" />
+    <TypeScriptCompile Include="src\app\templates\dashboard\data.ts" />
+    <TypeScriptCompile Include="src\app\templates\editor\data.ts" />
+    <TypeScriptCompile Include="src\app\templates\editor\editor.component.ts" />
+    <TypeScriptCompile Include="src\app\templates\email\email.component.ts" />
+    <TypeScriptCompile Include="src\app\templates\templates.component.ts" />
+    <TypeScriptCompile Include="src\app\users\form\form.component.ts" />
+    <TypeScriptCompile Include="src\app\users\users.component.ts" />
+    <TypeScriptCompile Include="src\config\api.config.ts" />
+    <TypeScriptCompile Include="src\config\interceptors\request.interceptor.ts" />
     <TypeScriptCompile Include="src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="src\environments\environment.ts" />
     <TypeScriptCompile Include="src\main.ts" />
     <TypeScriptCompile Include="src\polyfills.ts" />
+    <TypeScriptCompile Include="src\services\alerts.service.ts" />
+    <TypeScriptCompile Include="src\services\features.service.ts" />
+    <TypeScriptCompile Include="src\services\index.ts" />
+    <TypeScriptCompile Include="src\services\items.service.ts" />
+    <TypeScriptCompile Include="src\services\products.service.ts" />
+    <TypeScriptCompile Include="src\services\users.service.ts" />
     <TypeScriptCompile Include="src\test.ts" />
   </ItemGroup>
   <ItemGroup>
@@ -246,7 +294,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\app\dashboard\icons\" />
+    <Folder Include="src\assets\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CadreManagement.Web.HyperMediaApi\CadreManagement.Web.HyperMediaApi.csproj">

@@ -1,46 +1,97 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule, Title } from '@angular/platform-browser';
+import { NgModule, Type } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
-import { MaterialModule } from '@angular/material';
 
 import { ROUTES } from './app.routes';
-import { AppComponent } from './app.component';
 import { NoContentComponent } from './no-content';
+import { AppComponent } from './app.component';
+import { MainComponent } from './main/main.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardProductComponent } from './dashboard-product/dashboard-product.component';
+import { ProductOverviewComponent } from './dashboard-product/overview/overview.component';
+import { ProductStatsComponent } from './dashboard-product/stats/stats.component';
+import { ProductFeaturesComponent } from './dashboard-product/features/features.component';
+import { FeaturesFormComponent } from './dashboard-product/features/form/form.component';
+import { UsersComponent } from './users/users.component';
+import { UsersFormComponent } from './users/form/form.component';
+import { LogsComponent } from './logs/logs.component';
+import { DetailComponent } from './detail/detail.component';
+import { LoginComponent } from './login/login.component';
+import { FormComponent } from './form/form.component';
+import { TemplatesComponent } from './templates/templates.component';
+import { DashboardTemplateComponent } from './templates/dashboard/dashboard.component';
+import { EmailTemplateComponent } from './templates/email/email.component';
+import { EditorTemplateComponent } from './templates/editor/editor.component';
+
+import { MaterialModule } from '@angular/material';
+import { CovalentCoreModule } from '@covalent/core';
+import { CovalentHttpModule, IHttpInterceptor } from '@covalent/http';
+import { CovalentHighlightModule } from '@covalent/highlight';
+import { CovalentMarkdownModule } from '@covalent/markdown';
+import { CovalentChartsModule } from '@covalent/charts';
+import { RequestInterceptor } from '../config/interceptors/request.interceptor';
 
 import { ApiNavigatorModule } from './hyper-media/apiNavigator.module';
-import { SidebarModule } from './sidebar/sidebar.module';
-import { FooterModule } from './shared/footer/footer.module';
-import { NavbarModule } from './shared/navbar/navbar.module';
-import { DashboardModule } from './dashboard/dashboard.module';
 import { ProductModule } from './product/product.module';
 import { MaterialDemoModule } from './material/material-demo.module';
 import { CovalentDemoModule } from './covalent/covalent-demo.module';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
+const httpInterceptorProviders: Type<any>[] = [
+    RequestInterceptor,
+];
 
 @NgModule({
     declarations: [
+        NoContentComponent,
         AppComponent,
-        NoContentComponent
+        MainComponent,
+        DashboardComponent,
+        DashboardProductComponent,
+        ProductOverviewComponent,
+        ProductStatsComponent,
+        ProductFeaturesComponent,
+        FeaturesFormComponent,
+        UsersComponent,
+        UsersFormComponent,
+        LogsComponent,
+        FormComponent,
+        DetailComponent,
+        LoginComponent,
+        TemplatesComponent,
+        DashboardTemplateComponent,
+        EmailTemplateComponent,
+        EditorTemplateComponent,
     ],
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule,
         RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+
         MaterialModule,
+        CovalentCoreModule.forRoot(),
+        CovalentChartsModule.forRoot(),
+        CovalentHttpModule.forRoot({
+            interceptors: [{
+                interceptor: RequestInterceptor, paths: ['**'],
+            }],
+        }),
+        CovalentHighlightModule.forRoot(),
+        CovalentMarkdownModule.forRoot(),
+        NgxChartsModule,
+
         ApiNavigatorModule,
-        SidebarModule,
-        FooterModule,
-        NavbarModule,
-        DashboardModule,
         ProductModule,
         MaterialDemoModule,
         CovalentDemoModule
     ],
     providers: [
         { provide: 'api', useValue: 'http//localhost/api/user' }, //test
+        Title,
+        httpInterceptorProviders
     ],
     bootstrap: [AppComponent]
 })
