@@ -10,12 +10,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6C38D1B4-AA5E-483C-A83B-3C95D4B0B10F}</ProjectGuid>
+    <ProjectGuid>{681DFA7F-1E89-4B0B-96CE-141DDF786FBB}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CadreManagement.Web</RootNamespace>
-    <AssemblyName>CadreManagement.Web</AssemblyName>
+    <RootNamespace>CadreManagement.Web.Angular2.Practice</RootNamespace>
+    <AssemblyName>CadreManagement.Web.Angular2.Practice</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />

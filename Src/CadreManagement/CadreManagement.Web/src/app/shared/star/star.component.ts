@@ -2,8 +2,7 @@
 
 @Component({
     selector: 'ai-star',
-    templateUrl: './star.component.html',
-    styleUrls: ['/star.component.css']
+    templateUrl: './star.component.html'
 })
 export class StarComponent implements OnChanges {
     @Input()

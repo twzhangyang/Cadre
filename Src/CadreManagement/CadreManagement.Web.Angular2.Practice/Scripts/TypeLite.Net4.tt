@@ -11,7 +11,7 @@
 <# var manager = Manager.Create(Host, GenerationEnvironment); #>
 
 <# 
-	var ts = CadreManagement.Web.Scripts.TypeScriptGenerationConfig.SetupGeneration();
+	var ts = CadreManagement.Web.Angular2.Practice.Scripts.TypeScriptGenerationConfig.SetupGeneration();
 #>
 
 <#= ts.Generate(TsGeneratorOutput.Properties) #>

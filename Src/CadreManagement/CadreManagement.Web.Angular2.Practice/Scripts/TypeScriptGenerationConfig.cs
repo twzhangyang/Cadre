@@ -4,7 +4,7 @@ using CadreManagement.WebApi;
 using TypeLite;
 using TypeLite.Net4;
 
-namespace CadreManagement.Web.Scripts
+namespace CadreManagement.Web.Angular2.Practice.Scripts
 {
     public static class TypeScriptGenerationConfig
     {
