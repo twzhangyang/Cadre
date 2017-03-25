@@ -3,7 +3,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductListService } from './product-list.service';
 import { ProductHyperMediaService } from './../product.service.hypermedia';
-import { CadreApiNavigator } from './../../cadreApiNavigator';
+import { CadreApiNavigator } from './../../hyper-media/cadreApiNavigator';
 
 @Component({
     templateUrl: './product-list.component.html',
@@ -19,7 +19,7 @@ export class ProductListComponent implements OnInit {
     products: Product.Product[];
     productHomeResource: Product.ProductHomeResource;
 
-    constructor(private _productListService: ProductListService, private productHyperMediaService: ProductHyperMediaService,private apiNavigator:CadreApiNavigator) {
+    constructor(private productListService: ProductListService, private productHyperMediaService: ProductHyperMediaService,private apiNavigator:CadreApiNavigator) {
 
     }
 
@@ -29,7 +29,7 @@ export class ProductListComponent implements OnInit {
 
     ngOnInit(): void {
 
-        //this._productListService.getProducts()
+        //this.productListService.getProducts()
         //    .subscribe(productsResource => this.products = productsResource.products,
         //        error => this.errorMessage = <any>error);
 

@@ -2,7 +2,7 @@
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { SharedModule } from './../shared'
+import { SharedModule } from './../shared/shared.module';
 
 import { ProductListComponent } from './list/product-list.component';
 import { ProductDetailComponent } from './detail/product-detail.component';

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CadreManagement.Web")]
+[assembly: AssemblyTitle("CadreManagement.Angular2.Practice")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CadreManagement.Web")]
+[assembly: AssemblyProduct("CadreManagement.Angular2.Practice")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("681dfa7f-1e89-4b0b-96ce-141ddf786fbb")]
+[assembly: Guid("6c38d1b4-aa5e-483c-a83b-3c95d4b0b10f")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -5,7 +5,6 @@
  
 
 
-
 declare namespace CadreManagement.Web.HyperMediaApi {
 	interface HyperMediaCommand<TResponseType> {
 		postUrl: CadreManagement.Web.HyperMediaApi.Link<TResponseType>;

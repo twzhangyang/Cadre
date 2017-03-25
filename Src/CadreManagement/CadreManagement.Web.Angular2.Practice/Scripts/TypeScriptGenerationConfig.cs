@@ -1,9 +1,10 @@
 ﻿using System;
+using CadreManagement.Web.HyperMediaApi;
 using CadreManagement.WebApi;
 using TypeLite;
 using TypeLite.Net4;
 
-namespace CadreManagement.Web.Angular2.Practice.Scripts
+namespace CadreManagement.Web.Scripts
 {
     public static class TypeScriptGenerationConfig
     {
@@ -14,7 +15,7 @@ namespace CadreManagement.Web.Angular2.Practice.Scripts
                 .WithMemberFormatter((identifier) =>
                         Char.ToLower(identifier.Name[0]) + identifier.Name.Substring(1))
                 .For(typeof(CadreApiNavigator).Assembly)
-                .For(typeof(CadreManagement.Web.HyperMediaApi.HyperMediaCommand<>).Assembly);
+                .For(typeof(HyperMediaCommand<>).Assembly);
         }
     }
 }
