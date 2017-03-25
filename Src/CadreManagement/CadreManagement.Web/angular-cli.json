@@ -3,31 +3,34 @@
         "version": "1.0.0-beta.28.3",
         "name": "cadre management"
     },
-    "apps": [{
-        "root": "src",
-        "outDir": "dist",
-        "assets": [
-            "assets",
-            "favicon.ico"
-        ],
-        "index": "index.html",
-        "main": "main.ts",
-        "polyfills": "polyfills.ts",
-        "test": "test.ts",
-        "tsconfig": "../tsconfig.json",
-        "prefix": "app",
-        "styles": [
-          "./styles/styles.css",
-          "./styles/styles.scss",
-          "./styles/light-bootstrap-dashboard.css"
-        ],
-        "scripts": [],
-        "environments": {
-            "source": "environments/environment.ts",
-            "dev": "environments/environment.ts",
-            "prod": "environments/environment.prod.ts"
-        }
-    }],
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "../tsconfig.json",
+      "prefix": "app",
+      "styles": [
+        "./styles/styles.css",
+        "./styles/styles.scss",
+        "./styles/light-bootstrap-dashboard.css"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "source": "environments/environment.ts",
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
     "e2e": {
         "protractor": {
             "config": "./protractor.conf.js"

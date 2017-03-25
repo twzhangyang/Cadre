@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { NextObserver } from 'rxjs/Observer';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/switchMap';
 
 export class SubLinkNavigator<TResource, TParentResource> {
     constructor(
@@ -36,20 +37,18 @@ export class SubLinkNavigator<TResource, TParentResource> {
     }
 
     execute = () => {
-        var resource = Observable.create(observer => {
-            this.parent()
-                .do(data => console.log(JSON.stringify(data)))
-                .subscribe((data: TParentResource) => {
-                    var myLink = this.navigator(data);
-                    this.http.get(myLink.uri)
-                        .map((response: Response) => <TResource>response.json())
-                        .do(data => console.log('All: ' + JSON.stringify(data)))
-                        .subscribe((data: TResource) => observer.next(data), this.handleError);
-                }, this.handleError);
-        });
+        var getResource= this.parent()
+            .do(data => console.log(JSON.stringify(data)))
+            .switchMap((data: TParentResource) => {
+                var myLink = this.navigator(data);
+                var resource = this.http.get(myLink.uri)
+                    .map((response: Response) => <TResource>response.json())
+                    .do(data => console.log("All:" + JSON.stringify(data)));
 
-        return resource;
+                return resource;
+            });
 
+        return getResource;
     };
 
     private handleError(error: Response) {

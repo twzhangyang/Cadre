@@ -16,6 +16,7 @@ import { NavbarModule } from './shared/navbar/navbar.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ProductModule } from './product/product.module';
 import { MaterialDemoModule } from './material/material-demo.module';
+import { CovalentDemoModule } from './covalent/covalent-demo.module';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import { MaterialDemoModule } from './material/material-demo.module';
         DashboardModule,
         ProductModule,
         MaterialDemoModule,
+        CovalentDemoModule
     ],
     providers: [
         { provide: 'api', useValue: 'http//localhost/api/user' }, //test

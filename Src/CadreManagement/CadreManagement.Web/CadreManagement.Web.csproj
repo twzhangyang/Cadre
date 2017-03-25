@@ -128,6 +128,7 @@
     </Content>
     <Content Include="src\app\app.component.css" />
     <Content Include="src\app\app.component.html" />
+    <Content Include="src\app\covalent\covalent-demo.component.html" />
     <Content Include="src\app\dashboard\dashboard.component.html" />
     <Content Include="src\app\dashboard\home\home.component.html" />
     <Content Include="src\app\dashboard\maps\maps.component.html" />
@@ -195,6 +196,8 @@
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
     <TypeScriptCompile Include="src\app\app.routes.ts" />
+    <TypeScriptCompile Include="src\app\covalent\covalent-demo.component.ts" />
+    <TypeScriptCompile Include="src\app\covalent\covalent-demo.module.ts" />
     <TypeScriptCompile Include="src\app\hyper-media\cadreApiNavigator.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard.component.ts" />
     <TypeScriptCompile Include="src\app\dashboard\dashboard.module.ts" />
