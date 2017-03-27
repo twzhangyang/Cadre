@@ -10,6 +10,8 @@ export class AppComponent {
 
     constructor(private _iconRegistry: MdIconRegistry,
         private _domSanitizer: DomSanitizer) {
+        this._iconRegistry.addSvgIconInNamespace('assets', 'home',
+            this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/home.png'));
         this._iconRegistry.addSvgIconInNamespace('assets', 'teradata',
             this._domSanitizer.bypassSecurityTrustResourceUrl('assets/icons/teradata.svg'));
         this._iconRegistry.addSvgIconInNamespace('assets', 'github',

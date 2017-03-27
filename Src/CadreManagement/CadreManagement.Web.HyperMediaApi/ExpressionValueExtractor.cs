@@ -67,8 +67,6 @@ namespace CadreManagement.Web.HyperMediaApi
 
         private static object SlowFallbackToCompilingAndExecutingLambda(Expression expression)
         {
-            //throw new NotSupportedException("The expression is not supported");
-            // We can do this, but performance is REALLY bad (so bad that it actually matters).
             return Expression.Lambda(expression).Compile().DynamicInvoke(null);
         }
     }
