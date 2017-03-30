@@ -148,7 +148,6 @@
     <Content Include="src\app\product\list\product-list.component.css" />
     <Content Include="src\app\product\list\product-list.component.html" />
     <Content Include="src\app\shared\footer\footer.component.html" />
-    <Content Include="src\app\shared\navbar\navbar.component.html" />
     <Content Include="src\app\shared\star\star.component.css" />
     <Content Include="src\app\shared\star\star.component.html" />
     <Content Include="src\app\templates\dashboard\dashboard.component.html" />
@@ -264,8 +263,6 @@
     <TypeScriptCompile Include="src\app\product\product.service.hypermedia.ts" />
     <TypeScriptCompile Include="src\app\shared\footer\footer.component.ts" />
     <TypeScriptCompile Include="src\app\shared\footer\footer.module.ts" />
-    <TypeScriptCompile Include="src\app\shared\navbar\navbar.component.ts" />
-    <TypeScriptCompile Include="src\app\shared\navbar\navbar.module.ts" />
     <TypeScriptCompile Include="src\app\shared\shared.module.ts" />
     <TypeScriptCompile Include="src\app\shared\star\star.component.ts" />
     <TypeScriptCompile Include="src\app\templates\dashboard\dashboard.component.ts" />
