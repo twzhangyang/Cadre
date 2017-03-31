@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductListService } from './product-list.service';
 import { ProductHyperMediaService } from './../product.service.hypermedia';
 import { CadreApiNavigator } from './../../hyper-media/cadreApiNavigator';
+import 'rxjs/add/operator/switchMap';
 
 @Component({
     templateUrl: './product-list.component.html',
@@ -19,7 +20,7 @@ export class ProductListComponent implements OnInit {
     products: Product.Product[];
     productHomeResource: Product.ProductHomeResource;
 
-    constructor(private productListService: ProductListService, private productHyperMediaService: ProductHyperMediaService,private apiNavigator:CadreApiNavigator) {
+    constructor(private productListService: ProductListService, private cadreApiNavigator: CadreApiNavigator) {
 
     }
 
@@ -28,27 +29,25 @@ export class ProductListComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.cadreApiNavigator
+            .followLink(cadreHomeResource => cadreHomeResource.resourceLinks.productHome)
+            .followLink(productHomeResource => productHomeResource.resourceLinks.products)
+            .execute()
+            .subscribe((products: Product.ProductsResource) => this.products = products.products);
 
-        //this.productListService.getProducts()
-        //    .subscribe(productsResource => this.products = productsResource.products,
-        //        error => this.errorMessage = <any>error);
-
-        this.productHyperMediaService.getProducts()
-            .subscribe(productsResource => this.products = productsResource.products);
-
-        this.apiNavigator
-        .followLink(home=>home.resourceLinks.productHome)
-        .execute()
-        .subscribe(productHome=>this.productHomeResource=productHome);
+        this.cadreApiNavigator
+            .followLink(cadreHomeResource => cadreHomeResource.resourceLinks.productHome)
+            .execute()
+            .subscribe((productHomeResource:Product.ProductHomeResource) => this.productHomeResource = productHomeResource);
     }
 
     onAdd(): void {
-        if(this.productHomeResource.resourceCommands.addedCommand)
-        {
-            this.productHomeResource.resourceCommands.addedCommand.productName="test name";
-            this.apiNavigator.postCommand(this.productHomeResource.resourceCommands.addedCommand)
-            .subscribe((response:Product.ProductAddedResponse)=>this.products.push(response.product));
-        }
+        var commond = this.productHomeResource.resourceCommands.addedCommand;
+        commond.productName = "test name";
+        commond.productCode = "product code";
+
+        this.cadreApiNavigator.postCommand(commond)
+            .subscribe((response: Product.ProductAddedResponse) => this.products.push(response.product));
     }
 
     onRatingClicked(message: string): void {

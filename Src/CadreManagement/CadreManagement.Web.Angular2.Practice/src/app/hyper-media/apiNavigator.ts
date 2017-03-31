@@ -24,7 +24,7 @@ export class SubLinkNavigator<TResource, TParentResource> {
                 return { uri: linkSelector(resource).urlTemplate.replace("{0}", <string><any>argument) };
             }
 
-        return new SubLinkNavigator<TTargetResource, TResource>(this.http, <any>this.execute, <any>standardLinkSelector);//<any> cast is to get rid of incorrect error reported by Resharper
+        return new SubLinkNavigator<TTargetResource, TResource>(this.http, <any>this.execute, <any>standardLinkSelector);
     }
 
     followLinkTemplate2 = <TTargetResource, TArgument, TArgument2>(linkSelector: (self: TResource) => HyperMediaApi.LinkTemplate2<TTargetResource, TArgument, TArgument2>, argument: TArgument, argument2: TArgument2) => {
@@ -33,7 +33,7 @@ export class SubLinkNavigator<TResource, TParentResource> {
                 return { uri: linkSelector(resource).urlTemplate.replace("{0}", <string><any>argument).replace("{1}", <string><any>argument2) };
             }
 
-        return new SubLinkNavigator<TTargetResource, TResource>(this.http, <any>this.execute, <any>standardLinkSelector);//<any> cast is to get rid of incorrect error reported by Resharper
+        return new SubLinkNavigator<TTargetResource, TResource>(this.http, <any>this.execute, <any>standardLinkSelector);
     }
 
     execute = () => {

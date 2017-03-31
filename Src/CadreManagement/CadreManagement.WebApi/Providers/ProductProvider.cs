@@ -26,7 +26,7 @@ namespace CadreManagement.WebApi.Providers
             {
                 ProductId = id+1,
                 ProductName = command.ProductName,
-                ProductCode = "GDN-0011",
+                ProductCode = command.ProductCode,
                 ReleaseDate = DateTime.Now,
                 Description = "Leaf rake with 48-inch wooden handle.",
                 Price = 19.95m,
